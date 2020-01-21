@@ -1,0 +1,10 @@
+I:\Component Programming\Coursework\ComponentProgramming\ComponentProgramming\bin\Debug\ComponentProgramming.exe.config
+I:\Component Programming\Coursework\ComponentProgramming\ComponentProgramming\bin\Debug\ComponentProgramming.exe
+I:\Component Programming\Coursework\ComponentProgramming\ComponentProgramming\bin\Debug\ComponentProgramming.pdb
+I:\Component Programming\Coursework\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.csprojAssemblyReference.cache
+I:\Component Programming\Coursework\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.Form1.resources
+I:\Component Programming\Coursework\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.Properties.Resources.resources
+I:\Component Programming\Coursework\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.csproj.GenerateResource.cache
+I:\Component Programming\Coursework\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.csproj.CoreCompileInputs.cache
+I:\Component Programming\Coursework\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.exe
+I:\Component Programming\Coursework\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.pdb

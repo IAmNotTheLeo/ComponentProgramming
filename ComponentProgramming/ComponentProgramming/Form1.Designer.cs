@@ -28,24 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.customTextBox1 = new Class_Library.CustomTextBox();
+            this.customTextBox2 = new Class_Library.CustomTextBox();
             this.SuspendLayout();
             // 
-            // customTextBox1
+            // customTextBox2
             // 
-            this.customTextBox1.BackColor = System.Drawing.Color.White;
-            this.customTextBox1.Location = new System.Drawing.Point(91, 86);
-            this.customTextBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.customTextBox1.Name = "customTextBox1";
-            this.customTextBox1.Size = new System.Drawing.Size(76, 20);
-            this.customTextBox1.TabIndex = 0;
+            this.customTextBox2.BackColor = System.Drawing.Color.White;
+            this.customTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.customTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.customTextBox2.Location = new System.Drawing.Point(126, 178);
+            this.customTextBox2.Name = "customTextBox2";
+            this.customTextBox2.Size = new System.Drawing.Size(100, 19);
+            this.customTextBox2.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(271, 387);
-            this.Controls.Add(this.customTextBox1);
+            this.ClientSize = new System.Drawing.Size(355, 583);
+            this.Controls.Add(this.customTextBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -56,8 +58,7 @@
         }
 
         #endregion
-
-        private Class_Library.CustomTextBox customTextBox1;
+        private Class_Library.CustomTextBox customTextBox2;
     }
 }
 

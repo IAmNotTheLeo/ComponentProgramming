@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Class_Library;
+
 
 namespace ComponentProgramming
 {
@@ -17,11 +17,6 @@ namespace ComponentProgramming
         public Form1()
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.Width = 450;
-            this.Height = 650;
-
-            
         }
     }
 }

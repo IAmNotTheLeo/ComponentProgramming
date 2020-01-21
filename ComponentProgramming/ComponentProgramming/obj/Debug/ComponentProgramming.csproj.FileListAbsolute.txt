@@ -21,3 +21,16 @@ C:\Users\lc8884l\Source\Repos\chiLee98\ComponentProgramming\ComponentProgramming
 C:\Users\lc8884l\Source\Repos\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.csproj.CopyComplete
 C:\Users\lc8884l\Source\Repos\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.exe
 C:\Users\lc8884l\Source\Repos\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.pdb
+C:\Users\lukas\Desktop\Component Programming\cw\ComponentProgramming\ComponentProgramming\bin\Debug\ComponentProgramming.exe.config
+C:\Users\lukas\Desktop\Component Programming\cw\ComponentProgramming\ComponentProgramming\bin\Debug\ComponentProgramming.exe
+C:\Users\lukas\Desktop\Component Programming\cw\ComponentProgramming\ComponentProgramming\bin\Debug\ComponentProgramming.pdb
+C:\Users\lukas\Desktop\Component Programming\cw\ComponentProgramming\ComponentProgramming\bin\Debug\Class Library.dll
+C:\Users\lukas\Desktop\Component Programming\cw\ComponentProgramming\ComponentProgramming\bin\Debug\Class Library.pdb
+C:\Users\lukas\Desktop\Component Programming\cw\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.csprojAssemblyReference.cache
+C:\Users\lukas\Desktop\Component Programming\cw\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.Form1.resources
+C:\Users\lukas\Desktop\Component Programming\cw\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.Properties.Resources.resources
+C:\Users\lukas\Desktop\Component Programming\cw\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.csproj.GenerateResource.cache
+C:\Users\lukas\Desktop\Component Programming\cw\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.csproj.CoreCompileInputs.cache
+C:\Users\lukas\Desktop\Component Programming\cw\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.csproj.CopyComplete
+C:\Users\lukas\Desktop\Component Programming\cw\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.exe
+C:\Users\lukas\Desktop\Component Programming\cw\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.pdb

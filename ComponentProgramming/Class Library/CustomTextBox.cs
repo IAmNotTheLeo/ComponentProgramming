@@ -16,6 +16,8 @@ namespace Class_Library
         public CustomTextBox()
         {
             InitializeComponent();
+            BorderStyle = BorderStyle.None;
+            Font = new Font(Font.FontFamily, 12);
         }
 
         protected override void OnTextChanged(EventArgs e)
@@ -24,8 +26,10 @@ namespace Class_Library
            
             if(!Regex.IsMatch(Text, @"^\d+$") && Text.Length > 0)
             {
-                BackColor = Color.Red;
-            } else
+                BackColor = Color.FromArgb(240, 128, 128);
+                
+            }
+            else
             {
                 BackColor = Color.White;
             }

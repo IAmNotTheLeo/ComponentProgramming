@@ -34,16 +34,17 @@
             // customTextBox1
             // 
             this.customTextBox1.BackColor = System.Drawing.Color.White;
-            this.customTextBox1.Location = new System.Drawing.Point(121, 106);
+            this.customTextBox1.Location = new System.Drawing.Point(91, 86);
+            this.customTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.customTextBox1.Name = "customTextBox1";
-            this.customTextBox1.Size = new System.Drawing.Size(100, 22);
+            this.customTextBox1.Size = new System.Drawing.Size(76, 20);
             this.customTextBox1.TabIndex = 0;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(361, 476);
+            this.ClientSize = new System.Drawing.Size(271, 387);
             this.Controls.Add(this.customTextBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";

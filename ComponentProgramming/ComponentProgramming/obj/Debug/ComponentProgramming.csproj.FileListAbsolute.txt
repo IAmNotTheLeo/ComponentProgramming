@@ -8,3 +8,16 @@ I:\Component Programming\Coursework\ComponentProgramming\ComponentProgramming\ob
 I:\Component Programming\Coursework\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.csproj.CoreCompileInputs.cache
 I:\Component Programming\Coursework\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.exe
 I:\Component Programming\Coursework\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.pdb
+C:\Users\lc8884l\Source\Repos\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\bin\Debug\ComponentProgramming.exe.config
+C:\Users\lc8884l\Source\Repos\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\bin\Debug\ComponentProgramming.exe
+C:\Users\lc8884l\Source\Repos\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\bin\Debug\ComponentProgramming.pdb
+C:\Users\lc8884l\Source\Repos\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\bin\Debug\Class Library.dll
+C:\Users\lc8884l\Source\Repos\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\bin\Debug\Class Library.pdb
+C:\Users\lc8884l\Source\Repos\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.csprojAssemblyReference.cache
+C:\Users\lc8884l\Source\Repos\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.Form1.resources
+C:\Users\lc8884l\Source\Repos\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.Properties.Resources.resources
+C:\Users\lc8884l\Source\Repos\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.csproj.GenerateResource.cache
+C:\Users\lc8884l\Source\Repos\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.csproj.CoreCompileInputs.cache
+C:\Users\lc8884l\Source\Repos\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.csproj.CopyComplete
+C:\Users\lc8884l\Source\Repos\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.exe
+C:\Users\lc8884l\Source\Repos\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.pdb

@@ -18,8 +18,8 @@ namespace ComponentProgramming
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
-            this.Width = 400;
-            this.Height = 800;
+            this.Width = 450;
+            this.Height = 650;
 
             
         }

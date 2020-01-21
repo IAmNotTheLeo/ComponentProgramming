@@ -18,11 +18,6 @@ namespace Class_Library
             InitializeComponent();
         }
 
-        /*protected override void OnPaint(PaintEventArgs pe)
-        {
-            base.OnPaint(pe);
-        }*/
-
         protected override void OnTextChanged(EventArgs e)
         {
             base.OnTextChanged(e);

@@ -17,7 +17,9 @@ namespace Class_Library
         {
             InitializeComponent();
             BorderStyle = BorderStyle.None;
-            Font = new Font(Font.FontFamily, 12);
+            Multiline = true;
+            Font = new Font("Microsoft Sans Serif", 12);
+            Size = new Size(200, 21);
         }
 
         protected override void OnTextChanged(EventArgs e)

@@ -39,5 +39,12 @@ namespace ComponentProgramming
             g.FillRectangle(lgb, ClientRectangle);
             base.OnPaint(e);
         }
+
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            Form frm = new AdminDashboard();
+            frm.Show();
+            Hide();
+        }
     }
 }

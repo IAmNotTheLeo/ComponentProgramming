@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace ComponentProgramming
 {
-    public partial class AdminDashboard : Form
+    public partial class CreateEmployee : Form
     {
-        public AdminDashboard()
+        public CreateEmployee()
         {
             InitializeComponent();
-
-        }
-        private void BtnAdd_Click(object sender, EventArgs e)
-        {
-            Form frm = new CreateEmployee();
-            frm.Show();
-            Hide();
         }
     }
 }

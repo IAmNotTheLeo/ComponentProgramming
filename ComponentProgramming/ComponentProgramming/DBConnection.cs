@@ -5,30 +5,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Class_Library
+namespace ComponentProgramming
 {
     class DBConnection
-    { 
-        public DBConnection()
-        {
-        
+    {
+        private static readonly object padlock = new object();
+        private static DBConnection instance = null;
 
+        public static DBConnection GetInstance()
+        {
+            lock (padlock)
+            {
+                if (instance == null)
+                {
+                    instance = new DBConnection();
+                }
+                return instance;
+            }
         }
 
-        /*public void Test()
+        private static SqlConnection GetConnection()
+        {
+            String directPath = "Data Source=sql-server;Initial Catalog=lc8884l;User ID=lc8884l;Password=!1SQLServer";
+            return new SqlConnection(directPath);
+        }
+
+        public void CreateEmployeeAccount(int NumberID, String fullName, String address, int phone, DateTime dateJoined)
         {
             SqlConnection myconnection = GetConnection();
-            String myquery = "SELECT * FROM EmployeeTable";
-            SqlCommand sqlCommand = new SqlCommand(myquery, myconnection);
+            String myquery = "INSERT INTO Employee (NumberID, FullName, EAddress, Phone, DateJoined) VALUES ('" + NumberID + "', '" + fullName + "', '" + address + "', '" + phone + "', '" + dateJoined + "')";
+            SqlCommand mycommand = new SqlCommand(myquery, myconnection);
 
             try
             {
                 myconnection.Open();
-                SqlDataReader reader = sqlCommand.ExecuteReader();
-                while (reader.Read())
-                {
-                    reader[2].ToString();
-                }
+                mycommand.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -40,13 +51,9 @@ namespace Class_Library
 
             }
 
-        }*/
-        
-
-        private static SqlConnection GetConnection()
-        {
-            String directPath = "Data Source=sql-server;Initial Catalog=lc8884l;User ID=lc8884l;Password=!1SQLServer";
-            return new SqlConnection(directPath);
         }
+
+
+
     }
 }

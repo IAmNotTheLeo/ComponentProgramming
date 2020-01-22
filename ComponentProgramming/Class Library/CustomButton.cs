@@ -19,7 +19,6 @@ namespace Class_Library
             Width = 125;
             Height = 45;
             ForeColor = Color.White;
-            Font = new Font("Source Code Pro Semibold", 12);
             FlatStyle = FlatStyle.Flat;
             FlatAppearance.BorderColor = Color.FromArgb(65, 94, 242);
         }

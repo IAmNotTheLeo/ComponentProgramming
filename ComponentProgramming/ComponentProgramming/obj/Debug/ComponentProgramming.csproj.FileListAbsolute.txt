@@ -34,3 +34,5 @@ C:\Users\lukas\Desktop\Component Programming\cw\ComponentProgramming\ComponentPr
 C:\Users\lukas\Desktop\Component Programming\cw\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.pdb
 C:\Users\lukas\Desktop\Component Programming\cw\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.LoginPage.resources
 C:\Users\lc8884l\Source\Repos\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.LoginPage.resources
+C:\Users\lc8884l\Source\Repos\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.AdminDashboard.resources
+C:\Users\lc8884l\Source\Repos\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.CreateEmployee.resources

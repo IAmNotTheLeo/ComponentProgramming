@@ -62,6 +62,18 @@
     <Compile Include="CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomTextBox2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomTextBox2.Designer.cs">
+      <DependentUpon>CustomTextBox2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomTextBox3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomTextBox3.Designer.cs">
+      <DependentUpon>CustomTextBox3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

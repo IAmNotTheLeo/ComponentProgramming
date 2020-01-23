@@ -14,6 +14,9 @@ namespace ComponentProgramming.Views
             TextBox passwordBox,
             Form curForm)
         {
+            // Set LoginView to be transparent
+            BackColor = Color.Transparent;
+
             // Set LoginView Size
             Size = curForm.Size;
             Dock = DockStyle.Bottom;

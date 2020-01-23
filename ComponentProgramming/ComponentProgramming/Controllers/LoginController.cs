@@ -23,8 +23,8 @@ namespace ComponentProgramming.Controllers
 
         public CustomTextBox UsernameBox { get => model.UsernameBox; set => model.UsernameBox = value; }
         public TextBox PasswordBox { get => model.PasswordBox; set => model.PasswordBox = value; }
-        public Label UsernameLbl { get => model.UsernameLbl; set => model.UsernameLbl = value; }
-        public Label PasswordLbl { get => model.PasswordLbl; set => model.PasswordLbl = value; }
+        public CustomLabel UsernameLbl { get => model.UsernameLbl; set => model.UsernameLbl = value; }
+        public CustomLabel PasswordLbl { get => model.PasswordLbl; set => model.PasswordLbl = value; }
         public CustomButton LoginBtn { get => model.LoginBtn; set => model.LoginBtn = value; }
 
         public static void ButtonClick(object sender, EventArgs e)

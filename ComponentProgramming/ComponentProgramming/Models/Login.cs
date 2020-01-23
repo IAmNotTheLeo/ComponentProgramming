@@ -12,14 +12,14 @@ namespace ComponentProgramming.Models
     {
         private CustomTextBox usernameBox = new CustomTextBox();
         private TextBox passwordBox = new TextBox();
-        private Label usernameLbl = new Label();
-        private Label passwordLbl = new Label();
+        private CustomLabel usernameLbl = new CustomLabel();
+        private CustomLabel passwordLbl = new CustomLabel();
         private CustomButton loginBtn = new CustomButton();
 
         public CustomTextBox UsernameBox { get => usernameBox; set => usernameBox = value; }
         public TextBox PasswordBox { get => passwordBox; set => passwordBox = value; }
-        public Label UsernameLbl { get => usernameLbl; set => usernameLbl = value; }
-        public Label PasswordLbl { get => passwordLbl; set => passwordLbl = value; }
+        public CustomLabel UsernameLbl { get => usernameLbl; set => usernameLbl = value; }
+        public CustomLabel PasswordLbl { get => passwordLbl; set => passwordLbl = value; }
         public CustomButton LoginBtn { get => loginBtn; set => loginBtn = value; }
     }
 }

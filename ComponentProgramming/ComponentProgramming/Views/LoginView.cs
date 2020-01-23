@@ -7,9 +7,9 @@ namespace ComponentProgramming.Views
 {
     class LoginView : Panel
     {
-        public void SetUpControlls(CustomTextBox usernameBox, 
-            Label passwordLbl, 
-            Label usernameLbl, 
+        public void SetUpControlls(CustomTextBox usernameBox,
+            CustomLabel passwordLbl,
+            CustomLabel usernameLbl, 
             CustomButton loginBtn, 
             TextBox passwordBox,
             Form curForm)
@@ -44,8 +44,8 @@ namespace ComponentProgramming.Views
         }
 
         private void SetPositions(CustomTextBox usernameBox,
-            Label passwordLbl,
-            Label usernameLbl,
+            CustomLabel passwordLbl,
+            CustomLabel usernameLbl,
             CustomButton loginBtn,
             TextBox passwordBox)
         {

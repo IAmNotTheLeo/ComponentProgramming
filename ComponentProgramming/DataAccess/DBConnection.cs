@@ -30,7 +30,7 @@ namespace ComponentProgramming
             return new SqlConnection(directPath);
         }
 
-        public void CreateEmployeeAccount(int NumberID, String fullName, String address, int phone, DateTime dateJoined)
+        /*public void CreateEmployeeAccount(int NumberID, String fullName, String address, int phone, DateTime dateJoined)
         {
             SqlConnection myconnection = GetConnection();
             String myquery = "INSERT INTO Employee (NumberID, FullName, EAddress, Phone, DateJoined) VALUES ('" + NumberID + "', '" + fullName + "', '" + address + "', '" + phone + "', '" + dateJoined + "')";
@@ -51,7 +51,7 @@ namespace ComponentProgramming
 
             }
 
-        }
+        }*/
 
 
 

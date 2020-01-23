@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ComponentProgramming.Controllers;
+using ComponentProgramming.Models;
+using ComponentProgramming.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +15,7 @@ using System.Windows.Forms;
 
 namespace ComponentProgramming
 {
-    public partial class LoginPage : Form
+    public partial class MVCForm : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -25,11 +28,15 @@ namespace ComponentProgramming
             int HeightEllipse
         );
 
-        public LoginPage()
+        public MVCForm()
         {
             InitializeComponent();
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-            panel1.BackColor = Color.Transparent;
+
+            Login loginModel = new Login();
+            LoginView loginView = new LoginView();
+            LoginController loginController = new LoginController(loginModel, loginView);
+            loginController.DisplayView(this);
 
         }
         protected override void OnPaint(PaintEventArgs e)
@@ -38,13 +45,6 @@ namespace ComponentProgramming
             Graphics g = e.Graphics;
             g.FillRectangle(lgb, ClientRectangle);
             base.OnPaint(e);
-        }
-
-        private void BtnLogin_Click(object sender, EventArgs e)
-        {
-            Form frm = new AdminDashboard();
-            frm.Show();
-            Hide();
         }
     }
 }

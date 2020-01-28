@@ -38,6 +38,7 @@ namespace ComponentProgramming
             LoginController loginController = new LoginController(loginModel, loginView);
             loginController.DisplayView(this);
 
+
         }
         protected override void OnPaint(PaintEventArgs e)
         {

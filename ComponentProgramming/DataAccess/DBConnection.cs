@@ -30,16 +30,25 @@ namespace ComponentProgramming
             return new SqlConnection(directPath);
         }
 
-        public void CreateEmployeeAccount(int NumberID, String fullName, String address, int phone, DateTime dateJoined)
+        public void CreateEmployeeAccount(int numberID, String firstName, String surname, String address, String email, String password, int departmentID, DateTime dateJoined)
         {
             SqlConnection myconnection = GetConnection();
-            String myquery = "INSERT INTO Employee (NumberID, FullName, EAddress, Phone, DateJoined) VALUES ('" + NumberID + "', '" + fullName + "', '" + address + "', '" + phone + "', '" + dateJoined + "')";
+            String myquery = "INSERT INTO Employee (NumberID, FirstName, Surname, Address, Email, Password, Phone, DepartmentID, DateJoined) VALUES ('@v1', '@v2', '@v3', '@v4', '@v5', '@v6', '@v7', '@v8')";
             SqlCommand mycommand = new SqlCommand(myquery, myconnection);
+            mycommand.Parameters.AddWithValue("@v1", numberID);
+            mycommand.Parameters.AddWithValue("@v2", firstName);
+            mycommand.Parameters.AddWithValue("@v3", surname);
+            mycommand.Parameters.AddWithValue("@v4", address);
+            mycommand.Parameters.AddWithValue("@v5", email);
+            mycommand.Parameters.AddWithValue("@v6", password);
+            mycommand.Parameters.AddWithValue("@v7", departmentID);
+            mycommand.Parameters.AddWithValue("@v8", dateJoined);
 
             try
             {
                 myconnection.Open();
                 mycommand.ExecuteNonQuery();
+                Console.WriteLine("Works");
             }
             catch (Exception ex)
             {

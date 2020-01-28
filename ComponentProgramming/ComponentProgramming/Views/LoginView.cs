@@ -11,7 +11,7 @@ namespace ComponentProgramming.Views
             CustomLabel passwordLbl,
             CustomLabel usernameLbl, 
             CustomButton loginBtn, 
-            TextBox passwordBox,
+            CustomTextBox2 passwordBox,
             Form curForm)
         {
             // Set LoginView to be transparent

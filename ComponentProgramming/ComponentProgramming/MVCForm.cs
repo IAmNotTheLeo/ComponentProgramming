@@ -33,11 +33,15 @@ namespace ComponentProgramming
             InitializeComponent();
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
-            Login loginModel = new Login();
+            /*Login loginModel = new Login();
             LoginView loginView = new LoginView();
             LoginController loginController = new LoginController(loginModel, loginView);
-            loginController.DisplayView(this);
+            loginController.DisplayView(this);*/
 
+            Dashboard dashboardModel = new Dashboard();
+            DashboardView dashboardView = new DashboardView();
+            DashboardController dashboardController = new DashboardController(dashboardModel, dashboardView);
+            dashboardController.DisplayView(this);
 
         }
         protected override void OnPaint(PaintEventArgs e)

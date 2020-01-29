@@ -22,8 +22,12 @@ namespace ComponentProgramming.Views
             Dock = DockStyle.Bottom;
 
             // Set Text of controls
-            usernameLbl.Text = "Username";
+            usernameLbl.Text = "Username:";
+            usernameLbl.AutoSize = true;
+
             passwordLbl.Text = "Password";
+            passwordLbl.AutoSize = true;
+
             loginBtn.Text = "Login";
             loginBtn.Click += (sender, e) => LoginController.ButtonClick(sender, e);
 

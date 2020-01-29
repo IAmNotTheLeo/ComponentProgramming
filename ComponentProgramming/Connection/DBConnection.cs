@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ComponentProgramming
+namespace Connection
 {
-    class DBConnection
+    public class DBConnection
     {
-        private static readonly object padlock = new object();
+        /*private static readonly object padlock = new object();
         private static DBConnection instance = null;
 
         public static DBConnection GetInstance()
@@ -22,7 +22,7 @@ namespace ComponentProgramming
                 }
                 return instance;
             }
-        }
+        }*/
 
         private static SqlConnection GetConnection()
         {
@@ -30,7 +30,7 @@ namespace ComponentProgramming
             return new SqlConnection(directPath);
         }
 
-        public void CreateEmployeeAccount(, String firstName, String surname, String address, String email, String password, int departmentID, DateTime dateJoined)
+        public static void CreateEmployeeAccount(String firstName, String surname, String address, String email, String password, int departmentID, String dateJoined)
         {
             SqlConnection myconnection = GetConnection();
             String myquery = "INSERT INTO Employee (FirstName, Surname, Address, Email, Password, Phone, DepartmentID, DateJoined) VALUES ('@v1', '@v2', '@v3', '@v4', '@v5', '@v6', '@v7', '@v8')";
@@ -60,8 +60,5 @@ namespace ComponentProgramming
             }
 
         }
-
-
-
     }
 }

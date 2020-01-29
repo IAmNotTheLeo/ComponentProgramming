@@ -34,7 +34,7 @@ C:\Users\lukas\Desktop\Component Programming\cw\ComponentProgramming\ComponentPr
 C:\Users\lukas\Desktop\Component Programming\cw\ComponentProgramming\ComponentProgramming\bin\Debug\CustomControlls.pdb
 C:\Users\lukas\Desktop\Component Programming\cw\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.MVCForm.resources
 C:\Users\lc8884l\Source\Repos\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\bin\Debug\CustomControlls.dll
-C:\Users\lc8884l\Source\Repos\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\bin\Debug\DataAccess.dll
 C:\Users\lc8884l\Source\Repos\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\bin\Debug\CustomControlls.pdb
-C:\Users\lc8884l\Source\Repos\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\bin\Debug\DataAccess.pdb
 C:\Users\lc8884l\Source\Repos\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.MVCForm.resources
+C:\Users\lc8884l\source\repos\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\bin\Debug\Connection.dll
+C:\Users\lc8884l\source\repos\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\bin\Debug\Connection.pdb

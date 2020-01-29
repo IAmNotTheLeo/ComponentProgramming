@@ -51,6 +51,8 @@ namespace ComponentProgramming.Views
             lblDepartment.AutoSize = true;
 
             btnCreate.Text = "Create Account";
+            btnCreate.Click += (sender, e) => DashboardController.btnCreate_Click(sender, e);
+
 
             curForm.Controls.Add(this);
             Controls.Add(lblfirstName);

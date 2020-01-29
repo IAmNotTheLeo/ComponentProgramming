@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9F5EED1E-A030-443C-8899-C7B3610571EF}</ProjectGuid>
+    <ProjectGuid>{589F7794-1EFB-416D-A13F-A73F0380391F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CustomControlls</RootNamespace>
-    <AssemblyName>CustomControlls</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>Connection</RootNamespace>
+    <AssemblyName>Connection</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,8 +33,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,37 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CustomButton.Designer.cs">
-      <DependentUpon>CustomButton.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomLabel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CustomLabel.Designer.cs">
-      <DependentUpon>CustomLabel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CustomTextBox.Designer.cs">
-      <DependentUpon>CustomTextBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomTextBox2.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CustomTextBox2.Designer.cs">
-      <DependentUpon>CustomTextBox2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomTextBox3.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CustomTextBox3.Designer.cs">
-      <DependentUpon>CustomTextBox3.cs</DependentUpon>
-    </Compile>
+    <Compile Include="DBConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entities\" />
+    <Folder Include="Operations\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

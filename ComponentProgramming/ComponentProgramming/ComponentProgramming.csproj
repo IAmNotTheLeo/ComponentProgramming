@@ -95,15 +95,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Connection\Connection.csproj">
+      <Project>{589f7794-1efb-416d-a13f-a73f0380391f}</Project>
+      <Name>Connection</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CustomControlls\CustomControlls.csproj">
       <Project>{7292bb8b-3d98-4b51-a80a-78bfb4a373b1}</Project>
       <Name>CustomControlls</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{34194a34-f90c-4450-a1b7-a26aa347b17f}</Project>
-      <Name>DataAccess</Name>
-    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

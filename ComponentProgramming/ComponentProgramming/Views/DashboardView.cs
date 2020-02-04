@@ -43,6 +43,7 @@ namespace ComponentProgramming.Views
 
             lblPassword.Text = "Password:";
             lblPassword.AutoSize = true;
+            txtPassword.PasswordChar = '*';
 
             lblPhone.Text = "Phone:";
             lblPhone.AutoSize = true;

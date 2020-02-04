@@ -30,24 +30,15 @@ namespace Connection
             return new SqlConnection(directPath);
         }
 
-        public static void CreateEmployeeAccount(String firstName, String surname, String address, String email, String password, int departmentID, String dateJoined)
+        public static void CreateEmployeeAccount()
         {
             SqlConnection myconnection = GetConnection();
-            String myquery = "INSERT INTO Employee (FirstName, Surname, Address, Email, Password, Phone, DepartmentID, DateJoined) VALUES ('@v1', '@v2', '@v3', '@v4', '@v5', '@v6', '@v7', '@v8')";
+            String myquery = "INSERT INTO Employee (FirstName, Surname, Address, Email, Password, Phone, DepartmentID, DateJoined) VALUES ('Leo', 'Chimborazo', '12 Sample Lane', 'bob@gmail.com', '111', '09876543', '1', '20/20/20')";
             SqlCommand mycommand = new SqlCommand(myquery, myconnection);
-            mycommand.Parameters.AddWithValue("@v2", firstName);
-            mycommand.Parameters.AddWithValue("@v3", surname);
-            mycommand.Parameters.AddWithValue("@v4", address);
-            mycommand.Parameters.AddWithValue("@v5", email);
-            mycommand.Parameters.AddWithValue("@v6", password);
-            mycommand.Parameters.AddWithValue("@v7", departmentID);
-            mycommand.Parameters.AddWithValue("@v8", dateJoined);
-
             try
             {
                 myconnection.Open();
                 mycommand.ExecuteNonQuery();
-                Console.WriteLine("Works");
             }
             catch (Exception ex)
             {

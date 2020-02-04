@@ -1,6 +1,7 @@
 ﻿using ComponentProgramming.Controllers;
 using ComponentProgramming.Models;
 using ComponentProgramming.Views;
+using Connection;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,6 +43,7 @@ namespace ComponentProgramming
             DashboardView dashboardView = new DashboardView();
             DashboardController dashboardController = new DashboardController(dashboardModel, dashboardView);
             dashboardController.DisplayView(this);
+            
 
         }
         protected override void OnPaint(PaintEventArgs e)

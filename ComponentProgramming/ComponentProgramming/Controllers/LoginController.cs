@@ -15,10 +15,16 @@ namespace ComponentProgramming.Controllers
         private Login model;
         private LoginView view;
 
+
+        public LoginController()
+        {
+
+        }
         public LoginController(Login model, LoginView view)
         {
             this.model = model;
             this.view = view;
+            LoginBtn.Click += (sender, e) => ButtonClick(sender, e);
         }
 
         public CustomTextBox UsernameBox { get => model.UsernameBox; set => model.UsernameBox = value; }
@@ -27,14 +33,15 @@ namespace ComponentProgramming.Controllers
         public CustomLabel PasswordLbl { get => model.PasswordLbl; set => model.PasswordLbl = value; }
         public CustomButton LoginBtn { get => model.LoginBtn; set => model.LoginBtn = value; }
 
-        public static void ButtonClick(object sender, EventArgs e)
+
+        public void ButtonClick(object sender, EventArgs e)
         {
-            Console.WriteLine("Btn click");
+            AdminController.LoginValidation(UsernameBox.Text, PasswordBox.Text);
         }
 
         public void DisplayView(Form curForm)
         {
-            view.SetUpControlls(model.UsernameBox, model.PasswordLbl, model.UsernameLbl, model.LoginBtn, model.PasswordBox, curForm);
+            view.SetUpControlls(UsernameBox, PasswordLbl, UsernameLbl, LoginBtn, PasswordBox, curForm);
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using ComponentProgramming.Controllers;
 using ComponentProgramming.Models;
 using ComponentProgramming.Views;
-using Connection;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

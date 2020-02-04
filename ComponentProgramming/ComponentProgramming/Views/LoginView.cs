@@ -29,7 +29,6 @@ namespace ComponentProgramming.Views
             passwordLbl.AutoSize = true;
 
             loginBtn.Text = "Login";
-            loginBtn.Click += (sender, e) => LoginController.ButtonClick(sender, e);
 
             // Set up password TextBox
             passwordBox.BorderStyle = BorderStyle.None;

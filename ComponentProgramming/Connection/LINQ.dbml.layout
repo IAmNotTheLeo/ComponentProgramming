@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.75" name="LINQ">
+  <DataContextMoniker Name="/LINQDataContext" />
+  <nestedChildShapes>
+    <classShape Id="02c5fc33-d9cd-4b1c-ae0f-836ee73b1d19" absoluteBounds="0.75, 4, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/LINQDataContext/Department" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1ab25669-bd45-4c08-bdee-2d6aa5a1342f" absoluteBounds="0.765, 4.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4788b180-0892-45dd-b0dd-f6cc46aa9466" absoluteBounds="3.5, 3.375, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/LINQDataContext/Employee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="60ab7258-1ddd-4262-9b52-d6e430ca69c6" absoluteBounds="3.515, 3.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="af07c970-7068-4f43-bb87-5de436f67854" absoluteBounds="6.25, 0.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/LINQDataContext/HolidayRequest" />
+      <nestedChildShapes>
+        <elementListCompartment Id="82ddb57f-93df-4d47-b005-34266157bff3" absoluteBounds="6.265, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="20e5bc72-cd1f-4910-9a2f-0426013d1882" absoluteBounds="6.25, 6.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/LINQDataContext/HolidayTaken" />
+      <nestedChildShapes>
+        <elementListCompartment Id="14bc46a1-e08c-4b67-abf9-9b24bf19fd3f" absoluteBounds="6.265, 7.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7bd65184-c24d-4450-9231-fe7cb5395e62" absoluteBounds="6.25, 4, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/LINQDataContext/Role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d1b7e746-8ed5-4ac6-9a53-29c16675070c" absoluteBounds="6.265, 4.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 4.59699625651042); (3.5 : 4.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LINQDataContext/Department/Department_Employee" />
+      <nodes>
+        <classShapeMoniker Id="02c5fc33-d9cd-4b1c-ae0f-836ee73b1d19" />
+        <classShapeMoniker Id="4788b180-0892-45dd-b0dd-f6cc46aa9466" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 4); (1.75 : 1.63544840494792); (6.25 : 1.63544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LINQDataContext/Department/Department_HolidayRequest" />
+      <nodes>
+        <classShapeMoniker Id="02c5fc33-d9cd-4b1c-ae0f-836ee73b1d19" />
+        <classShapeMoniker Id="af07c970-7068-4f43-bb87-5de436f67854" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 3.375); (4.5 : 2.10942510742187); (6.25 : 2.10942510742187)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LINQDataContext/Employee/Employee_HolidayRequest" />
+      <nodes>
+        <classShapeMoniker Id="4788b180-0892-45dd-b0dd-f6cc46aa9466" />
+        <classShapeMoniker Id="af07c970-7068-4f43-bb87-5de436f67854" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 5.19399251302083); (1.75 : 7.63544840494792); (6.25 : 7.63544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LINQDataContext/Department/Department_HolidayTaken" />
+      <nodes>
+        <classShapeMoniker Id="02c5fc33-d9cd-4b1c-ae0f-836ee73b1d19" />
+        <classShapeMoniker Id="20e5bc72-cd1f-4910-9a2f-0426013d1882" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 5.9151025390625); (4.5 : 7.16147170247396); (6.25 : 7.16147170247396)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LINQDataContext/Employee/Employee_HolidayTaken" />
+      <nodes>
+        <classShapeMoniker Id="4788b180-0892-45dd-b0dd-f6cc46aa9466" />
+        <classShapeMoniker Id="20e5bc72-cd1f-4910-9a2f-0426013d1882" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.69314697265625); (6.25 : 4.69314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LINQDataContext/Employee/Employee_Role" />
+      <nodes>
+        <classShapeMoniker Id="4788b180-0892-45dd-b0dd-f6cc46aa9466" />
+        <classShapeMoniker Id="7bd65184-c24d-4450-9231-fe7cb5395e62" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

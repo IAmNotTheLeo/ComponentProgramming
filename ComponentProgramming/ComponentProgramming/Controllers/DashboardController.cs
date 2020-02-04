@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
+using System.Data.Linq;
 
 namespace ComponentProgramming.Controllers
 {
@@ -37,11 +38,48 @@ namespace ComponentProgramming.Controllers
         {
             this.model = model;
             this.view = view;
+            BtnCreate.Click += (sender, e) => btnCreate_Click(sender, e);
+            DisplayDepartment();
         }
 
-        public static void btnCreate_Click(object sender, EventArgs e)
+        public void DisplayDepartment()
         {
+            LINQDataContext db = new LINQDataContext();
+            var query = from displayPlace in db.Departments select displayPlace;
+            
+            foreach (var department in query)
+            {
+                model.ComboDepartment.Items.Add(department.Place);
+            }
 
+        }
+        public void AddAccount()
+        {
+            using (LINQDataContext db = new LINQDataContext())
+            {
+                Employee test = new Employee
+                {
+                    FirstName = TxtFirstName.Text,
+                    Surname = TxtSurname.Text,
+                    EAddress = TxtAddress.Text,
+                    Email = TxtEmail.Text,
+                    Password = TxtPassword.Text,
+                    Phone = int.Parse(TxtPhone.Text),
+                    DepartmentID = 1,
+                    DateJoined = DateTime.Now.ToShortDateString()
+                };
+                
+                db.Employees.InsertOnSubmit(test);
+                db.SubmitChanges();
+            }
+
+            
+        }
+
+        public void btnCreate_Click(object sender, EventArgs e)
+        {
+            AddAccount();
+            MessageBox.Show("Data Inserted");
         }
 
         public void DisplayView(Form curForm)

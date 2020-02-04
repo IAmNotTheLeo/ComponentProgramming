@@ -53,3 +53,34 @@ C:\Users\Leo Chimborazo\Documents\Github Projects\ComponentProgramming\Component
 C:\Users\Leo Chimborazo\Documents\Github Projects\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.csproj.CopyComplete
 C:\Users\Leo Chimborazo\Documents\Github Projects\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.exe
 C:\Users\Leo Chimborazo\Documents\Github Projects\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.pdb
+I:\Component Programming\Github\chiLee98\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\bin\Debug\ComponentProgramming.exe.config
+I:\Component Programming\Github\chiLee98\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\bin\Debug\ComponentProgramming.exe
+I:\Component Programming\Github\chiLee98\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\bin\Debug\ComponentProgramming.pdb
+I:\Component Programming\Github\chiLee98\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\bin\Debug\Connection.dll
+I:\Component Programming\Github\chiLee98\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\bin\Debug\CustomControlls.dll
+I:\Component Programming\Github\chiLee98\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\bin\Debug\Connection.pdb
+I:\Component Programming\Github\chiLee98\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\bin\Debug\CustomControlls.pdb
+I:\Component Programming\Github\chiLee98\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.csprojAssemblyReference.cache
+I:\Component Programming\Github\chiLee98\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.MVCForm.resources
+I:\Component Programming\Github\chiLee98\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.Properties.Resources.resources
+I:\Component Programming\Github\chiLee98\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.csproj.GenerateResource.cache
+I:\Component Programming\Github\chiLee98\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.csproj.CoreCompileInputs.cache
+I:\Component Programming\Github\chiLee98\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.csproj.CopyComplete
+I:\Component Programming\Github\chiLee98\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.exe
+I:\Component Programming\Github\chiLee98\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.pdb
+I:\Component Programming\Github\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\bin\Debug\ComponentProgramming.exe.config
+I:\Component Programming\Github\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\bin\Debug\ComponentProgramming.exe
+I:\Component Programming\Github\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\bin\Debug\ComponentProgramming.pdb
+I:\Component Programming\Github\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\bin\Debug\Connection.dll
+I:\Component Programming\Github\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\bin\Debug\CustomControlls.dll
+I:\Component Programming\Github\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\bin\Debug\Connection.pdb
+I:\Component Programming\Github\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\bin\Debug\Connection.dll.config
+I:\Component Programming\Github\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\bin\Debug\CustomControlls.pdb
+I:\Component Programming\Github\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.csprojAssemblyReference.cache
+I:\Component Programming\Github\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.MVCForm.resources
+I:\Component Programming\Github\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.Properties.Resources.resources
+I:\Component Programming\Github\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.csproj.GenerateResource.cache
+I:\Component Programming\Github\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.csproj.CoreCompileInputs.cache
+I:\Component Programming\Github\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.csproj.CopyComplete
+I:\Component Programming\Github\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.exe
+I:\Component Programming\Github\chiLee98\ComponentProgramming\ComponentProgramming\ComponentProgramming\obj\Debug\ComponentProgramming.pdb

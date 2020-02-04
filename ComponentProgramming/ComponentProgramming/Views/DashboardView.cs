@@ -50,10 +50,9 @@ namespace ComponentProgramming.Views
 
             lblDepartment.Text = "Department:";
             lblDepartment.AutoSize = true;
+            comboboxDepartment.SelectedIndex = 0;
 
             btnCreate.Text = "Create Account";
-            btnCreate.Click += (sender, e) => DashboardController.btnCreate_Click(sender, e);
-
 
             curForm.Controls.Add(this);
             Controls.Add(lblfirstName);
@@ -100,7 +99,7 @@ namespace ComponentProgramming.Views
             CustomButton btnCreate)
         {
 
-            lblfirstName.Location = new Point((Width - lblfirstName.Width * 2 + 20) / 2,
+            lblfirstName.Location = new Point((Width - lblfirstName.Width * 2 + 50) / 2,
                 Height / 5 - lblfirstName.Height / 2 - 60);
             lblfirstName.Anchor = AnchorStyles.None;
 
@@ -122,7 +121,7 @@ namespace ComponentProgramming.Views
             txtAddress.Location = new Point((Width - txtAddress.Width) / 2,
                 txtAddress.Height + lblAddress.Top + 5);
 
-            lblEmail.Location = new Point((Width - lblEmail.Width * 1 - 60) / 2,
+            lblEmail.Location = new Point((Width - lblEmail.Width * 1 - 45) / 2,
                 lblEmail.Height + txtAddress.Top + 5);
 
             txtEmail.Location = new Point((Width - txtEmail.Width) / 2,

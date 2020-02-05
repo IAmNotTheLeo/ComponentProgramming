@@ -16,12 +16,6 @@ namespace ComponentProgramming.Controllers
     {
         private Admin model;
         private AdminView view;
-
-
-        private AdminController()
-        {
-
-        }
         
         public AdminController(Admin model, AdminView view)
         {
@@ -32,7 +26,8 @@ namespace ComponentProgramming.Controllers
         public static bool LoginValidation(String email, String password)
         {
             LINQDataContext db = new LINQDataContext();
-            var query = from user in db.Employees where user.Email == email && user.Password == password select user;
+            
+            var query = from user in db.Employees where user.Email == email && user.Password == password && user.DepartmentID == 7 select user;
 
             if (query.Any())
             {

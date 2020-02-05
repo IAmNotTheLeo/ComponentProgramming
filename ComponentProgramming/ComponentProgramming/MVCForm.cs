@@ -38,12 +38,16 @@ namespace ComponentProgramming
             LoginController loginController = new LoginController(loginModel, loginView);
             loginController.DisplayView(this);*/
 
-            Dashboard dashboardModel = new Dashboard();
-            DashboardView dashboardView = new DashboardView();
-            DashboardController dashboardController = new DashboardController(dashboardModel, dashboardView);
-            dashboardController.DisplayView(this);
-            
+            EditEmployee editEmployee = new EditEmployee();
+            EditEmployeeView editEmployeeView = new EditEmployeeView();
+            EditEmployeeController editEmployeeController = new EditEmployeeController(editEmployee, editEmployeeView);
+            editEmployeeController.DisplayView(this);
 
+            /*AddEmployee addEmployee = new AddEmployee();
+            AddEmployeeView addEmployeeView = new AddEmployeeView();
+            AddEmployeeController addEmployeeController = new AddEmployeeController(addEmployee, addEmployeeView);
+            addEmployeeController.DisplayView(this);*/
+            
         }
         protected override void OnPaint(PaintEventArgs e)
         {

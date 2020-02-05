@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace ComponentProgramming.Views
 {
-    class DashboardView : Panel
+    class AddEmployeeView : Panel
     {
         public void SetUpControlls(CustomLabel lblfirstName,
             CustomLabel lblSurname,
@@ -48,8 +48,9 @@ namespace ComponentProgramming.Views
             lblPhone.Text = "Phone:";
             lblPhone.AutoSize = true;
 
-            lblDepartment.Text = "Department:";
+            lblDepartment.Text = "Department";
             lblDepartment.AutoSize = true;
+            comboboxDepartment.Font = new Font("Microsoft Sans Serif", 12);
 
             btnCreate.Text = "Create Account";
 
@@ -98,7 +99,7 @@ namespace ComponentProgramming.Views
             CustomButton btnCreate)
         {
 
-            lblfirstName.Location = new Point((Width - lblfirstName.Width * 2 + 50) / 2,
+            lblfirstName.Location = new Point((Width - lblfirstName.Width * 2 + 30) / 2,
                 Height / 5 - lblfirstName.Height / 2 - 60);
             lblfirstName.Anchor = AnchorStyles.None;
 
@@ -116,36 +117,47 @@ namespace ComponentProgramming.Views
 
             lblAddress.Location = new Point((Width - lblAddress.Width * 2 - 20) / 2,
                 lblAddress.Height + txtSurname.Top + 5);
+            lblAddress.Anchor = AnchorStyles.None;
 
             txtAddress.Location = new Point((Width - txtAddress.Width) / 2,
                 txtAddress.Height + lblAddress.Top + 5);
+            txtAddress.Anchor = AnchorStyles.None;
 
             lblEmail.Location = new Point((Width - lblEmail.Width * 1 - 45) / 2,
                 lblEmail.Height + txtAddress.Top + 5);
+            lblEmail.Anchor = AnchorStyles.None;
 
             txtEmail.Location = new Point((Width - txtEmail.Width) / 2,
                 txtEmail.Height + lblEmail.Top + 5);
+            txtEmail.Anchor = AnchorStyles.None;
 
             lblPassword.Location = new Point((Width - lblPassword.Width * 2) / 2,
                 lblPassword.Height + txtEmail.Top + 5);
+            lblPassword.Anchor = AnchorStyles.None;
 
             txtPassword.Location = new Point((Width - txtPassword.Width) / 2, 
                 txtPassword.Height + lblPassword.Top + 5);
+            txtPassword.Anchor = AnchorStyles.None;
 
             lblPhone.Location = new Point((Width - lblPhone.Width * 2 - 50) / 2,
                 lblPhone.Height + txtPassword.Top + 5);
+            lblPhone.Anchor = AnchorStyles.None;
 
             txtPhone.Location = new Point((Width - txtPhone.Width) / 2,
                 txtPhone.Height + lblPhone.Top + 5);
+            txtPhone.Anchor = AnchorStyles.None;
 
-            lblDepartment.Location = new Point((Width - lblDepartment.Width * 2 + 30) / 2,
+            lblDepartment.Location = new Point((Width - lblDepartment.Width) / 2,
                 lblDepartment.Height + txtPhone.Top + 5);
+            lblDepartment.Anchor = AnchorStyles.None;
 
             comboboxDepartment.Location = new Point((Width - comboboxDepartment.Width) / 2,
                 comboboxDepartment.Height + lblDepartment.Top + 5);
+            comboboxDepartment.Anchor = AnchorStyles.None;
 
             btnCreate.Location = new Point((Width - btnCreate.Width) / 2,
                 btnCreate.Height + comboboxDepartment.Top + 5);
+            btnCreate.Anchor = AnchorStyles.None;
 
         }
     }

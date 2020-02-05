@@ -7,7 +7,7 @@ namespace ComponentProgramming.Views
 {
     class LoginView : Panel
     {
-        public void SetUpControlls(CustomTextBox usernameBox,
+        public void SetUpControlls(CustomTextBox2 usernameBox,
             CustomLabel passwordLbl,
             CustomLabel usernameLbl, 
             CustomButton loginBtn, 
@@ -27,6 +27,7 @@ namespace ComponentProgramming.Views
 
             passwordLbl.Text = "Password";
             passwordLbl.AutoSize = true;
+            passwordBox.PasswordChar = '*';
 
             loginBtn.Text = "Login";
 
@@ -46,7 +47,7 @@ namespace ComponentProgramming.Views
             SetPositions(usernameBox, passwordLbl, usernameLbl, loginBtn, passwordBox);
         }
 
-        private void SetPositions(CustomTextBox usernameBox,
+        private void SetPositions(CustomTextBox2 usernameBox,
             CustomLabel passwordLbl,
             CustomLabel usernameLbl,
             CustomButton loginBtn,

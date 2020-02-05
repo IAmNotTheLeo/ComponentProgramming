@@ -24,24 +24,21 @@ namespace ComponentProgramming.Controllers
         {
             this.model = model;
             this.view = view;
-            LoginBtn.Click += (sender, e) => ButtonClick(sender, e);
+            model.LoginBtn.Click += (sender, e) => ButtonClick(sender, e);
         }
-
-        public CustomTextBox UsernameBox { get => model.UsernameBox; set => model.UsernameBox = value; }
-        public CustomTextBox2 PasswordBox { get => model.PasswordBox; set => model.PasswordBox = value; }
-        public CustomLabel UsernameLbl { get => model.UsernameLbl; set => model.UsernameLbl = value; }
-        public CustomLabel PasswordLbl { get => model.PasswordLbl; set => model.PasswordLbl = value; }
-        public CustomButton LoginBtn { get => model.LoginBtn; set => model.LoginBtn = value; }
-
 
         public void ButtonClick(object sender, EventArgs e)
         {
-            AdminController.LoginValidation(UsernameBox.Text, PasswordBox.Text);
+            AdminController.LoginValidation(model.UsernameBox.Text, model.PasswordBox.Text);
         }
 
         public void DisplayView(Form curForm)
         {
-            view.SetUpControlls(UsernameBox, PasswordLbl, UsernameLbl, LoginBtn, PasswordBox, curForm);
+            view.SetUpControlls(model.UsernameBox, 
+                model.PasswordLbl, 
+                model.UsernameLbl, 
+                model.LoginBtn, 
+                model.PasswordBox, curForm);
         }
     }
 }

@@ -46,12 +46,10 @@ namespace ComponentProgramming.Controllers
         {
             LINQDataContext db = new LINQDataContext();
             var query = from displayPlace in db.Departments select displayPlace;
-            
-            foreach (var department in query)
-            {
-                model.ComboDepartment.Items.Add(department.Place);
-            }
 
+            model.ComboDepartment.DataSource = query;
+            model.ComboDepartment.DisplayMember = "Place";
+            model.ComboDepartment.ValueMember = "DepartmentID";
         }
         public void AddAccount()
         {
@@ -64,8 +62,8 @@ namespace ComponentProgramming.Controllers
                     EAddress = TxtAddress.Text,
                     Email = TxtEmail.Text,
                     Password = TxtPassword.Text,
-                    Phone = int.Parse(TxtPhone.Text),
-                    DepartmentID = 1,
+                    Phone = TxtPhone.Text,
+                    DepartmentID = (int)ComboDepartment.SelectedValue,
                     DateJoined = DateTime.Now.ToShortDateString()
                 };
                 

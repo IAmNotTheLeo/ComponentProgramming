@@ -310,7 +310,7 @@ namespace Connection
 		
 		private string _Password;
 		
-		private int _Phone;
+		private string _Phone;
 		
 		private int _DepartmentID;
 		
@@ -340,7 +340,7 @@ namespace Connection
     partial void OnEmailChanged();
     partial void OnPasswordChanging(string value);
     partial void OnPasswordChanged();
-    partial void OnPhoneChanging(int value);
+    partial void OnPhoneChanging(string value);
     partial void OnPhoneChanged();
     partial void OnDepartmentIDChanging(int value);
     partial void OnDepartmentIDChanged();
@@ -481,8 +481,8 @@ namespace Connection
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="Int NOT NULL")]
-		public int Phone
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Phone
 		{
 			get
 			{

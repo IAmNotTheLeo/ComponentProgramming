@@ -50,7 +50,6 @@ namespace ComponentProgramming.Views
 
             lblDepartment.Text = "Department:";
             lblDepartment.AutoSize = true;
-            comboboxDepartment.SelectedIndex = 0;
 
             btnCreate.Text = "Create Account";
 

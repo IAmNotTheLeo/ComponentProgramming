@@ -49,9 +49,11 @@
   <ItemGroup>
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AddEmployeeController.cs" />
+    <Compile Include="Controllers\DeleteEmployeeController.cs" />
     <Compile Include="Controllers\EditEmployeeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Models\AddEmployee.cs" />
+    <Compile Include="Models\DeleteEmployee.cs" />
     <Compile Include="Models\EditEmployee.cs" />
     <Compile Include="MVCForm.cs">
       <SubType>Form</SubType>
@@ -67,6 +69,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Views\AddEmployeeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\DeleteEmployeeView.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Views\EditEmployeeView.cs">

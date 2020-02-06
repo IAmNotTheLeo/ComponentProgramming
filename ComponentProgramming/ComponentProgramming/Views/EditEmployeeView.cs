@@ -32,6 +32,7 @@ namespace ComponentProgramming.Views
 
             lblName.Text = "Employee Name";
             lblName.AutoSize = true;
+            comboName.DropDownStyle = ComboBoxStyle.DropDownList;
 
             lblAddress.Text = "Address:";
             lblAddress.AutoSize = true;
@@ -48,6 +49,7 @@ namespace ComponentProgramming.Views
             lblDepartment.Text = "Department:";
             lblDepartment.AutoSize = true;
             comboDepartment.Font = new Font("Microsoft Sans Serif", 12);
+            comboDepartment.DropDownStyle = ComboBoxStyle.DropDownList;
 
             btnEdit.Text = "Edit Account";
 

@@ -51,6 +51,7 @@ namespace ComponentProgramming.Views
             lblDepartment.Text = "Department";
             lblDepartment.AutoSize = true;
             comboboxDepartment.Font = new Font("Microsoft Sans Serif", 12);
+            comboboxDepartment.DropDownStyle = ComboBoxStyle.DropDownList;
 
             btnCreate.Text = "Create Account";
 

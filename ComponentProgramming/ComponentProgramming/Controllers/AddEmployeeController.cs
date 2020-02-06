@@ -17,8 +17,10 @@ namespace ComponentProgramming.Controllers
     {
         private AddEmployee model;
         private AddEmployeeView view;
+        private LINQDataContext db;
         public AddEmployeeController(AddEmployee model, AddEmployeeView view)
         {
+            db = new LINQDataContext();
             this.model = model;
             this.view = view;
             model.BtnCreate.Click += (sender, e) => btnCreate_Click(sender, e);
@@ -27,16 +29,14 @@ namespace ComponentProgramming.Controllers
 
         public void DisplayDepartment()
         {
-            LINQDataContext db = new LINQDataContext();
+            
             var query = from displayPlace in db.Departments where displayPlace.DepartmentID != 7 select displayPlace;
             model.ComboDepartment.DataSource = query;
             model.ComboDepartment.DisplayMember = "Place";
             model.ComboDepartment.ValueMember = "DepartmentID";
         }
         public void AddAccount()
-        {
-            using (LINQDataContext db = new LINQDataContext())
-            {
+        {            
                 Employee test = new Employee
                 {
                     FirstName = model.TxtFirstName.Text,
@@ -50,7 +50,14 @@ namespace ComponentProgramming.Controllers
                 };
                 
                 db.Employees.InsertOnSubmit(test);
+
+            try
+            {
                 db.SubmitChanges();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
             }
         }
 

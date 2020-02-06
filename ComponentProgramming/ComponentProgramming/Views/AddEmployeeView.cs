@@ -29,23 +29,23 @@ namespace ComponentProgramming.Views
             Size = curForm.Size;
             Dock = DockStyle.Bottom;
 
-            lblfirstName.Text = "First Name:";
+            lblfirstName.Text = "First Name";
             lblfirstName.AutoSize = true;
 
-            lblSurname.Text = "Surname:";
+            lblSurname.Text = "Surname";
             lblSurname.AutoSize = true;
 
-            lblAddress.Text = "Address:";
+            lblAddress.Text = "Address";
             lblAddress.AutoSize = true;
 
-            lblEmail.Text = "Email Address:";
+            lblEmail.Text = "Email Address";
             lblEmail.AutoSize = true;
 
-            lblPassword.Text = "Password:";
+            lblPassword.Text = "Password";
             lblPassword.AutoSize = true;
             txtPassword.PasswordChar = '*';
 
-            lblPhone.Text = "Phone:";
+            lblPhone.Text = "Phone";
             lblPhone.AutoSize = true;
 
             lblDepartment.Text = "Department";
@@ -100,7 +100,7 @@ namespace ComponentProgramming.Views
             CustomButton btnCreate)
         {
 
-            lblfirstName.Location = new Point((Width - lblfirstName.Width * 2 + 30) / 2,
+            lblfirstName.Location = new Point((Width - lblfirstName.Width) / 2,
                 Height / 5 - lblfirstName.Height / 2 - 60);
             lblfirstName.Anchor = AnchorStyles.None;
 
@@ -108,7 +108,7 @@ namespace ComponentProgramming.Views
                 txtfirstName.Height + lblfirstName.Top + 5);
             txtfirstName.Anchor = AnchorStyles.None;
 
-            lblSurname.Location = new Point((Width - lblSurname.Width * 2 - 17) / 2,
+            lblSurname.Location = new Point((Width - lblSurname.Width) / 2,
                 lblSurname.Height + txtfirstName.Top + 5);
             lblSurname.Anchor = AnchorStyles.None;
 
@@ -116,7 +116,7 @@ namespace ComponentProgramming.Views
                 txtSurname.Height + lblSurname.Top + 5);
             txtSurname.Anchor = AnchorStyles.None;
 
-            lblAddress.Location = new Point((Width - lblAddress.Width * 2 - 20) / 2,
+            lblAddress.Location = new Point((Width - lblAddress.Width) / 2,
                 lblAddress.Height + txtSurname.Top + 5);
             lblAddress.Anchor = AnchorStyles.None;
 
@@ -124,7 +124,7 @@ namespace ComponentProgramming.Views
                 txtAddress.Height + lblAddress.Top + 5);
             txtAddress.Anchor = AnchorStyles.None;
 
-            lblEmail.Location = new Point((Width - lblEmail.Width * 1 - 45) / 2,
+            lblEmail.Location = new Point((Width - lblEmail.Width) / 2,
                 lblEmail.Height + txtAddress.Top + 5);
             lblEmail.Anchor = AnchorStyles.None;
 
@@ -132,7 +132,7 @@ namespace ComponentProgramming.Views
                 txtEmail.Height + lblEmail.Top + 5);
             txtEmail.Anchor = AnchorStyles.None;
 
-            lblPassword.Location = new Point((Width - lblPassword.Width * 2) / 2,
+            lblPassword.Location = new Point((Width - lblPassword.Width) / 2,
                 lblPassword.Height + txtEmail.Top + 5);
             lblPassword.Anchor = AnchorStyles.None;
 
@@ -140,7 +140,7 @@ namespace ComponentProgramming.Views
                 txtPassword.Height + lblPassword.Top + 5);
             txtPassword.Anchor = AnchorStyles.None;
 
-            lblPhone.Location = new Point((Width - lblPhone.Width * 2 - 50) / 2,
+            lblPhone.Location = new Point((Width - lblPhone.Width) / 2,
                 lblPhone.Height + txtPassword.Top + 5);
             lblPhone.Anchor = AnchorStyles.None;
 

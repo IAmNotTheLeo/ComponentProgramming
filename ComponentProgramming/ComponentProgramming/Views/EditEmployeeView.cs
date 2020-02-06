@@ -22,6 +22,8 @@ namespace ComponentProgramming.Views
             CustomTextBox2 txtEmail,
             CustomTextBox2 txtPassword,
             CustomTextBox3 txtPhone,
+            CustomTextBox2 txtCurrentDepartment,
+            CustomLabel lblSelect,
             ComboBox comboDepartment,
             CustomButton btnEdit,
             Form curform)
@@ -34,20 +36,23 @@ namespace ComponentProgramming.Views
             lblName.AutoSize = true;
             comboName.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            lblAddress.Text = "Address:";
+            lblAddress.Text = "Address";
             lblAddress.AutoSize = true;
 
-            lblEmail.Text = "Email Address:";
+            lblEmail.Text = "Email Address";
             lblEmail.AutoSize = true;
 
-            lblPassword.Text = "Password:";
+            lblPassword.Text = "Password";
             lblPassword.AutoSize = true;
 
-            lblPhone.Text = "Phone:";
+            lblPhone.Text = "Phone";
             lblPhone.AutoSize = true;
 
-            lblDepartment.Text = "Department:";
+            lblDepartment.Text = "Department";
             lblDepartment.AutoSize = true;
+            txtCurrentDepartment.ReadOnly = true;
+            lblSelect.Text = "Select:";
+            lblSelect.AutoSize = true;
             comboDepartment.Font = new Font("Microsoft Sans Serif", 12);
             comboDepartment.DropDownStyle = ComboBoxStyle.DropDownList;
 
@@ -70,11 +75,13 @@ namespace ComponentProgramming.Views
             Controls.Add(txtPhone);
 
             Controls.Add(lblDepartment);
+            Controls.Add(txtCurrentDepartment);
+            Controls.Add(lblSelect);
             Controls.Add(comboDepartment);
 
             Controls.Add(btnEdit);
 
-            SetPositions(lblName, lblAddress, lblEmail, lblPassword, lblPhone, lblDepartment, comboName, txtAddress, txtEmail, txtPassword, txtPhone, comboDepartment, btnEdit);
+            SetPositions(lblName, lblAddress, lblEmail, lblPassword, lblPhone, lblDepartment, comboName, txtAddress, txtEmail, txtPassword, txtPhone, txtCurrentDepartment, lblSelect, comboDepartment, btnEdit);
         }
 
         private void SetPositions(CustomLabel lblName, 
@@ -87,7 +94,9 @@ namespace ComponentProgramming.Views
             CustomTextBox2 txtAddress, 
             CustomTextBox2 txtEmail, 
             CustomTextBox2 txtPassword, 
-            CustomTextBox3 txtPhone, 
+            CustomTextBox3 txtPhone,
+            CustomTextBox2 txtCurrentDepartment,
+            CustomLabel lblSelect,
             ComboBox comboDepartment,
             CustomButton btnEdit)
         {
@@ -99,7 +108,7 @@ namespace ComponentProgramming.Views
                 comboName.Height + lblName.Top + 12);
             comboName.Anchor = AnchorStyles.None;
 
-            lblAddress.Location = new Point((Width - lblAddress.Width * 2 - 17) / 2,
+            lblAddress.Location = new Point((Width - lblAddress.Width) / 2,
                 lblAddress.Height + comboName.Top + 10);
             lblAddress.Anchor = AnchorStyles.None;
 
@@ -107,7 +116,7 @@ namespace ComponentProgramming.Views
                 txtAddress.Height + lblAddress.Top + 5);
             txtAddress.Anchor = AnchorStyles.None;
 
-            lblEmail.Location = new Point((Width - lblEmail.Width * 1 - 60) / 2,
+            lblEmail.Location = new Point((Width - lblEmail.Width) / 2,
                 lblEmail.Height + txtAddress.Top + 5);
             lblEmail.Anchor = AnchorStyles.None;
 
@@ -115,7 +124,7 @@ namespace ComponentProgramming.Views
                 txtEmail.Height + lblEmail.Top + 5);
             txtEmail.Anchor = AnchorStyles.None;
 
-            lblPassword.Location = new Point((Width - lblPassword.Width * 2) / 2,
+            lblPassword.Location = new Point((Width - lblPassword.Width) / 2,
                 lblPassword.Height + txtEmail.Top + 5);
             lblPassword.Anchor = AnchorStyles.None;
 
@@ -123,7 +132,7 @@ namespace ComponentProgramming.Views
                 txtPassword.Height + lblPassword.Top + 5);
             txtPassword.Anchor = AnchorStyles.None;
 
-            lblPhone.Location = new Point((Width - lblPhone.Width * 2 - 50) / 2,
+            lblPhone.Location = new Point((Width - lblPhone.Width) / 2,
                 lblPhone.Height + txtPassword.Top + 5);
             lblPhone.Anchor = AnchorStyles.None;
 
@@ -135,12 +144,20 @@ namespace ComponentProgramming.Views
                 lblDepartment.Height + txtPhone.Top + 5);
             lblDepartment.Anchor = AnchorStyles.None;
 
+            txtCurrentDepartment.Location = new Point((Width - txtCurrentDepartment.Width) / 2,
+                txtCurrentDepartment.Height + lblDepartment.Top + 5);
+            txtCurrentDepartment.Anchor = AnchorStyles.None;
+
+            lblSelect.Location = new Point((Width - comboDepartment.Width * 2 - 55) / 2,
+                lblSelect.Height + txtCurrentDepartment.Top + 10);
+            lblSelect.Anchor = AnchorStyles.None;
+
             comboDepartment.Location = new Point((Width - comboDepartment.Width) / 2,
-                comboDepartment.Height + lblDepartment.Top + 5);
+                comboDepartment.Height + txtCurrentDepartment.Top + 12);
             comboDepartment.Anchor = AnchorStyles.None;
 
             btnEdit.Location = new Point((Width - btnEdit.Width) / 2,
-                btnEdit.Height + comboDepartment.Top + 10);
+                btnEdit.Height + comboDepartment.Top + 5);
             btnEdit.Anchor = AnchorStyles.None;
         }
     }

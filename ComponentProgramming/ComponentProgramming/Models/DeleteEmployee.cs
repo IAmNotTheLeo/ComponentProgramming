@@ -12,12 +12,12 @@ namespace ComponentProgramming.Models
     {
         CustomLabel lblName = new CustomLabel();
         ComboBox comboName = new ComboBox();
-        TextBox txtDetails = new TextBox();
+        RichTextBox richtxtDetails = new RichTextBox();
         CustomButton btnDelete = new CustomButton();
 
         public CustomLabel LblName { get => lblName; set => lblName = value; }
         public ComboBox ComboName { get => comboName; set => comboName = value; }
-        public TextBox TxtDetails { get => txtDetails; set => txtDetails = value; }
+        public RichTextBox RichtxtDetails { get => richtxtDetails; set => richtxtDetails = value; }
         public CustomButton BtnDelete { get => btnDelete; set => btnDelete = value; }
     }
 }

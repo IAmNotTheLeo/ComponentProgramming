@@ -4,7 +4,7 @@
     <Type Name="Department">
       <Column Name="DepartmentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Place" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="Department_Employee" Member="Employee" ThisKey="DepartmentID" OtherKey="EmployeeID" Type="Employee" Cardinality="One" />
+      <Association Name="Department_Employee" Member="Employees" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="Employee" />
       <Association Name="Department_HolidayRequest" Member="HolidayRequests" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="HolidayRequest" />
       <Association Name="Department_HolidayTaken" Member="HolidayTakens" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="HolidayTaken" />
     </Type>
@@ -12,8 +12,7 @@
   <Table Name="dbo.Employee" Member="Employees">
     <Type Name="Employee">
       <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Surname" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="EAddress" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
@@ -23,7 +22,7 @@
       <Association Name="Employee_HolidayRequest" Member="HolidayRequests" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="HolidayRequest" />
       <Association Name="Employee_HolidayTaken" Member="HolidayTakens" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="HolidayTaken" />
       <Association Name="Employee_Role" Member="Roles" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Role" />
-      <Association Name="Department_Employee" Member="Department" ThisKey="EmployeeID" OtherKey="DepartmentID" Type="Department" IsForeignKey="true" />
+      <Association Name="Department_Employee" Member="Department" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="Department" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.HolidayRequest" Member="HolidayRequests">

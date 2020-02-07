@@ -53,8 +53,9 @@ namespace ComponentProgramming.Views
             txtCurrentDepartment.ReadOnly = true;
             lblSelect.Text = "Select:";
             lblSelect.AutoSize = true;
-            comboDepartment.Font = new Font("Microsoft Sans Serif", 12);
-            comboDepartment.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboName.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboName.DropDownHeight = 200;
+            comboName.Font = new Font("Microsoft Sans Serif", 10);
 
             btnEdit.Text = "Edit Account";
 

@@ -128,7 +128,7 @@ namespace Connection
 		
 		private string _Place;
 		
-		private EntityRef<Employee> _Employee;
+		private EntitySet<Employee> _Employees;
 		
 		private EntitySet<HolidayRequest> _HolidayRequests;
 		
@@ -146,7 +146,7 @@ namespace Connection
 		
 		public Department()
 		{
-			this._Employee = default(EntityRef<Employee>);
+			this._Employees = new EntitySet<Employee>(new Action<Employee>(this.attach_Employees), new Action<Employee>(this.detach_Employees));
 			this._HolidayRequests = new EntitySet<HolidayRequest>(new Action<HolidayRequest>(this.attach_HolidayRequests), new Action<HolidayRequest>(this.detach_HolidayRequests));
 			this._HolidayTakens = new EntitySet<HolidayTaken>(new Action<HolidayTaken>(this.attach_HolidayTakens), new Action<HolidayTaken>(this.detach_HolidayTakens));
 			OnCreated();
@@ -192,32 +192,16 @@ namespace Connection
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Department_Employee", Storage="_Employee", ThisKey="DepartmentID", OtherKey="EmployeeID", IsUnique=true, IsForeignKey=false)]
-		public Employee Employee
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Department_Employee", Storage="_Employees", ThisKey="DepartmentID", OtherKey="DepartmentID")]
+		public EntitySet<Employee> Employees
 		{
 			get
 			{
-				return this._Employee.Entity;
+				return this._Employees;
 			}
 			set
 			{
-				Employee previousValue = this._Employee.Entity;
-				if (((previousValue != value) 
-							|| (this._Employee.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Employee.Entity = null;
-						previousValue.Department = null;
-					}
-					this._Employee.Entity = value;
-					if ((value != null))
-					{
-						value.Department = this;
-					}
-					this.SendPropertyChanged("Employee");
-				}
+				this._Employees.Assign(value);
 			}
 		}
 		
@@ -267,6 +251,18 @@ namespace Connection
 			}
 		}
 		
+		private void attach_Employees(Employee entity)
+		{
+			this.SendPropertyChanging();
+			entity.Department = this;
+		}
+		
+		private void detach_Employees(Employee entity)
+		{
+			this.SendPropertyChanging();
+			entity.Department = null;
+		}
+		
 		private void attach_HolidayRequests(HolidayRequest entity)
 		{
 			this.SendPropertyChanging();
@@ -300,9 +296,7 @@ namespace Connection
 		
 		private int _EmployeeID;
 		
-		private string _FirstName;
-		
-		private string _Surname;
+		private string _FullName;
 		
 		private string _EAddress;
 		
@@ -330,10 +324,8 @@ namespace Connection
     partial void OnCreated();
     partial void OnEmployeeIDChanging(int value);
     partial void OnEmployeeIDChanged();
-    partial void OnFirstNameChanging(string value);
-    partial void OnFirstNameChanged();
-    partial void OnSurnameChanging(string value);
-    partial void OnSurnameChanged();
+    partial void OnFullNameChanging(string value);
+    partial void OnFullNameChanged();
     partial void OnEAddressChanging(string value);
     partial void OnEAddressChanged();
     partial void OnEmailChanging(string value);
@@ -368,10 +360,6 @@ namespace Connection
 			{
 				if ((this._EmployeeID != value))
 				{
-					if (this._Department.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnEmployeeIDChanging(value);
 					this.SendPropertyChanging();
 					this._EmployeeID = value;
@@ -381,42 +369,22 @@ namespace Connection
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirstName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string FirstName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FullName", DbType="VarChar(100)")]
+		public string FullName
 		{
 			get
 			{
-				return this._FirstName;
+				return this._FullName;
 			}
 			set
 			{
-				if ((this._FirstName != value))
+				if ((this._FullName != value))
 				{
-					this.OnFirstNameChanging(value);
+					this.OnFullNameChanging(value);
 					this.SendPropertyChanging();
-					this._FirstName = value;
-					this.SendPropertyChanged("FirstName");
-					this.OnFirstNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Surname", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Surname
-		{
-			get
-			{
-				return this._Surname;
-			}
-			set
-			{
-				if ((this._Surname != value))
-				{
-					this.OnSurnameChanging(value);
-					this.SendPropertyChanging();
-					this._Surname = value;
-					this.SendPropertyChanged("Surname");
-					this.OnSurnameChanged();
+					this._FullName = value;
+					this.SendPropertyChanged("FullName");
+					this.OnFullNameChanged();
 				}
 			}
 		}
@@ -512,6 +480,10 @@ namespace Connection
 			{
 				if ((this._DepartmentID != value))
 				{
+					if (this._Department.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnDepartmentIDChanging(value);
 					this.SendPropertyChanging();
 					this._DepartmentID = value;
@@ -580,7 +552,7 @@ namespace Connection
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Department_Employee", Storage="_Department", ThisKey="EmployeeID", OtherKey="DepartmentID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Department_Employee", Storage="_Department", ThisKey="DepartmentID", OtherKey="DepartmentID", IsForeignKey=true)]
 		public Department Department
 		{
 			get
@@ -597,17 +569,17 @@ namespace Connection
 					if ((previousValue != null))
 					{
 						this._Department.Entity = null;
-						previousValue.Employee = null;
+						previousValue.Employees.Remove(this);
 					}
 					this._Department.Entity = value;
 					if ((value != null))
 					{
-						value.Employee = this;
-						this._EmployeeID = value.DepartmentID;
+						value.Employees.Add(this);
+						this._DepartmentID = value.DepartmentID;
 					}
 					else
 					{
-						this._EmployeeID = default(int);
+						this._DepartmentID = default(int);
 					}
 					this.SendPropertyChanged("Department");
 				}

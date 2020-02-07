@@ -27,7 +27,7 @@ namespace ComponentProgramming.Controllers
             DisplayDepartment();
         }
 
-        public void DisplayDepartment()
+        private void DisplayDepartment()
         {
             
             var query = from displayPlace in db.Departments where displayPlace.DepartmentID != 7 select displayPlace;
@@ -35,12 +35,11 @@ namespace ComponentProgramming.Controllers
             model.ComboDepartment.DisplayMember = "Place";
             model.ComboDepartment.ValueMember = "DepartmentID";
         }
-        public void AddAccount()
+        private void AddAccount()
         {            
                 Employee test = new Employee
                 {
-                    FirstName = model.TxtFirstName.Text,
-                    Surname = model.TxtSurname.Text,
+                    FullName = model.TxtFirstName.Text + " " + model.TxtSurname.Text,
                     EAddress = model.TxtAddress.Text,
                     Email = model.TxtEmail.Text,
                     Password = model.TxtPassword.Text,
@@ -61,7 +60,7 @@ namespace ComponentProgramming.Controllers
             }
         }
 
-        public void btnCreate_Click(object sender, EventArgs e)
+        private void btnCreate_Click(object sender, EventArgs e)
         {
             AddAccount();
             MessageBox.Show("Data Inserted");

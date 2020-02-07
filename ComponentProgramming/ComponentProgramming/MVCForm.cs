@@ -38,15 +38,20 @@ namespace ComponentProgramming
             LoginController loginController = new LoginController(loginModel, loginView);
             loginController.DisplayView(this);*/
 
-            EditEmployee editEmployee = new EditEmployee();
+            /*EditEmployee editEmployee = new EditEmployee();
             EditEmployeeView editEmployeeView = new EditEmployeeView();
             EditEmployeeController editEmployeeController = new EditEmployeeController(editEmployee, editEmployeeView);
-            editEmployeeController.DisplayView(this);
+            editEmployeeController.DisplayView(this);*/
 
             /*AddEmployee addEmployee = new AddEmployee();
             AddEmployeeView addEmployeeView = new AddEmployeeView();
             AddEmployeeController addEmployeeController = new AddEmployeeController(addEmployee, addEmployeeView);
             addEmployeeController.DisplayView(this);*/
+
+            DeleteEmployee deleteEmployee = new DeleteEmployee();
+            DeleteEmployeeView deleteEmployeeView = new DeleteEmployeeView();
+            DeleteEmployeeController deleteEmployeeController = new DeleteEmployeeController(deleteEmployee, deleteEmployeeView);
+            deleteEmployeeController.DisplayView(this);
             
         }
         protected override void OnPaint(PaintEventArgs e)

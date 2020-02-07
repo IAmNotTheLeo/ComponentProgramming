@@ -15,12 +15,10 @@ namespace ComponentProgramming.Controllers
     class AdminController
     {
         private Admin model;
-        private AdminView view;
         
-        public AdminController(Admin model, AdminView view)
+        public AdminController(Admin model)
         {
             this.model = model;
-            this.view = view;
         }
 
         public static bool LoginValidation(String email, String password)

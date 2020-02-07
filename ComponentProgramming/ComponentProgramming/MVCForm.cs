@@ -48,10 +48,15 @@ namespace ComponentProgramming
             AddEmployeeController addEmployeeController = new AddEmployeeController(addEmployee, addEmployeeView);
             addEmployeeController.DisplayView(this);*/
 
-            DeleteEmployee deleteEmployee = new DeleteEmployee();
+            /*DeleteEmployee deleteEmployee = new DeleteEmployee();
             DeleteEmployeeView deleteEmployeeView = new DeleteEmployeeView();
             DeleteEmployeeController deleteEmployeeController = new DeleteEmployeeController(deleteEmployee, deleteEmployeeView);
-            deleteEmployeeController.DisplayView(this);
+            deleteEmployeeController.DisplayView(this);*/
+
+            AdminDashboard adminDashboard = new AdminDashboard();
+            AdminDashboardView adminDashboardView = new AdminDashboardView();
+            AdminDashboardController adminDashboardController = new AdminDashboardController(adminDashboard, adminDashboardView);
+            adminDashboardController.DisplayView(this);
             
         }
         protected override void OnPaint(PaintEventArgs e)

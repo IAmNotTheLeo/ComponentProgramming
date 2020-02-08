@@ -35,8 +35,20 @@ namespace ComponentProgramming.Views
         public void SetPositions(CustomButton btnViewAddEmployee, CustomButton btnViewEditEmployee, CustomButton btnViewDeleteEmployee)
         {
             btnViewAddEmployee.Location = new Point((Width - btnViewAddEmployee.Width) / 2,
-                Height / 5 - btnViewAddEmployee.Height / 2 - 60);
+                Height / 5 - btnViewAddEmployee.Height / 2 + 60);
             btnViewAddEmployee.Anchor = AnchorStyles.None;
+
+            btnViewEditEmployee.Location = new Point((Width - btnViewEditEmployee.Width) / 2,
+                btnViewEditEmployee.Height + btnViewAddEmployee.Top + 20);
+            btnViewEditEmployee.Anchor = AnchorStyles.None;
+
+            btnViewDeleteEmployee.Location = new Point((Width - btnViewDeleteEmployee.Width) / 2,
+               btnViewDeleteEmployee.Height + btnViewEditEmployee.Top + 20);
+            btnViewDeleteEmployee.Anchor = AnchorStyles.None;
+
+           
+
+
 
         }
     }

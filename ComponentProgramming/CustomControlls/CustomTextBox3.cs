@@ -35,5 +35,15 @@ namespace CustomControlls
                 BackColor = Color.White;
             }
         }
+
+        protected override void OnKeyDown(KeyEventArgs e)
+        {
+            base.OnKeyDown(e);
+
+            if (e.KeyCode.Equals(Keys.Enter))
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
     }
 }

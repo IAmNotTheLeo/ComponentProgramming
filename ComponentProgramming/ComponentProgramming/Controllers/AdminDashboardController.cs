@@ -11,7 +11,7 @@ using CustomControlls;
 
 namespace ComponentProgramming.Controllers
 {
-    class AdminDashboardController
+    class AdminDashboardController : Display
     {
         private AdminDashboard model;
         private AdminDashboardView view;
@@ -20,14 +20,28 @@ namespace ComponentProgramming.Controllers
             this.model = model;
             this.view = view;
             model.BtnViewAddEmployee.Click += (sender, e) => btnViewAddEmployee_Click(sender, e);
+            model.BtnViewEditEmployee.Click += (sender, e) => btnViewEditEmployee_Click(sender, e);
+            model.BtnViewDeleteEmployee.Click += (sender, e) => btnViewDeleteEmployee_Click(sender, e);
         }
+
+        
 
         private void btnViewAddEmployee_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Test");
+            MessageBox.Show("Test1");
         }
 
-        internal void DisplayView(Form curForm)
+        private void btnViewEditEmployee_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Test2");
+        }
+
+        private void btnViewDeleteEmployee_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Test3");
+        }
+
+        public void DisplayView(Form curForm)
         {
             view.SetUpControlls(model.BtnViewAddEmployee, model.BtnViewEditEmployee, model.BtnViewDeleteEmployee, curForm);
         }

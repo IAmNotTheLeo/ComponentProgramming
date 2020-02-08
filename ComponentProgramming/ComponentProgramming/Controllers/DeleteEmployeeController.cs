@@ -10,7 +10,7 @@ using Connection;
 
 namespace ComponentProgramming.Controllers
 {
-    class DeleteEmployeeController
+    class DeleteEmployeeController : Display
     {
         private LINQDataContext db;
         private DeleteEmployee model;

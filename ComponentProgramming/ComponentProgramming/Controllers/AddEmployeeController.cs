@@ -13,7 +13,7 @@ using System.Data.Linq;
 
 namespace ComponentProgramming.Controllers
 {
-    class AddEmployeeController
+    class AddEmployeeController : Display
     {
         private AddEmployee model;
         private AddEmployeeView view;

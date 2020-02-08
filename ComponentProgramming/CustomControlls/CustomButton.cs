@@ -21,6 +21,7 @@ namespace CustomControlls
             ForeColor = Color.White;
             FlatStyle = FlatStyle.Flat;
             FlatAppearance.BorderColor = Color.FromArgb(65, 94, 242);
+            Cursor = Cursors.Hand;
         }
 
         public CustomButton(IContainer container)

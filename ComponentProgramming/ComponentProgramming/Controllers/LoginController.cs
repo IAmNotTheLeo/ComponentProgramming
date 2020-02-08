@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ComponentProgramming.Controllers
 {
-    class LoginController
+    class LoginController : Display
     {
         private Login model;
         private LoginView view;
 
-
-        public LoginController()
-        {
-
-        }
         public LoginController(Login model, LoginView view)
         {
             this.model = model;

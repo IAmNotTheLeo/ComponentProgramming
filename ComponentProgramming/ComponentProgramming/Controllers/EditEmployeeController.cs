@@ -11,7 +11,7 @@ using Connection;
 
 namespace ComponentProgramming.Controllers
 {
-    class EditEmployeeController
+    class EditEmployeeController : Display
     {
         private LINQDataContext db;
         private EditEmployee model;

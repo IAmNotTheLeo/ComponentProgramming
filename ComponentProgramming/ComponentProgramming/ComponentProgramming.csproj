@@ -56,6 +56,7 @@
     <Compile Include="Models\AddEmployee.cs" />
     <Compile Include="Models\AdminDashboard.cs" />
     <Compile Include="Models\DeleteEmployee.cs" />
+    <Compile Include="Models\Display.cs" />
     <Compile Include="Models\EditEmployee.cs" />
     <Compile Include="MVCForm.cs">
       <SubType>Form</SubType>

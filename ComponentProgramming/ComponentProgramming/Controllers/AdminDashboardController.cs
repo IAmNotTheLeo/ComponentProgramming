@@ -23,9 +23,6 @@ namespace ComponentProgramming.Controllers
             model.BtnViewEditEmployee.Click += (sender, e) => btnViewEditEmployee_Click(sender, e);
             model.BtnViewDeleteEmployee.Click += (sender, e) => btnViewDeleteEmployee_Click(sender, e);
         }
-
-        
-
         private void btnViewAddEmployee_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Test1");

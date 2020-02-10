@@ -37,7 +37,7 @@ namespace ComponentProgramming.Controllers
         }
         private void AddAccount()
         {            
-                Employee test = new Employee
+                Employee employee = new Employee
                 {
                     FullName = model.TxtFirstName.Text + " " + model.TxtSurname.Text,
                     EAddress = model.TxtAddress.Text,
@@ -48,22 +48,22 @@ namespace ComponentProgramming.Controllers
                     DateJoined = DateTime.Now.ToShortDateString()
                 };
                 
-                db.Employees.InsertOnSubmit(test);
+                db.Employees.InsertOnSubmit(employee);
 
             try
             {
                 db.SubmitChanges();
+                MessageBox.Show("Data Inserted");
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show("Error");
             }
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            AddAccount();
-            MessageBox.Show("Data Inserted");
+                AddAccount();      
         }
 
         public void DisplayView(Form curForm)

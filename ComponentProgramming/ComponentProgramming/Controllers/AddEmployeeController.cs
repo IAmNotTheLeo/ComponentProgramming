@@ -23,66 +23,28 @@ namespace ComponentProgramming.Controllers
             db = new LINQDataContext();
             this.model = model;
             this.view = view;
-            model.BtnCreate.Click += (sender, e) => btnCreate_Click(sender, e);
-            DisplayDepartment();
-        }
-
-        private void DisplayDepartment()
-        {
+            view.BtnCreate.Click += (sender, e) => btnCreate_Click(sender, e);
             
-            var query = from displayPlace in db.Departments where displayPlace.DepartmentID != 7 select displayPlace;
-            model.ComboDepartment.DataSource = query;
-            model.ComboDepartment.DisplayMember = "Place";
-            model.ComboDepartment.ValueMember = "DepartmentID";
-        }
-        private void AddAccount()
-        {            
-                Employee employee = new Employee
-                {
-                    FullName = model.TxtFirstName.Text + " " + model.TxtSurname.Text,
-                    EAddress = model.TxtAddress.Text,
-                    Email = model.TxtEmail.Text,
-                    Password = model.TxtPassword.Text,
-                    Phone = model.TxtPhone.Text,
-                    DepartmentID = (int)model.ComboDepartment.SelectedValue,
-                    DateJoined = DateTime.Now.ToShortDateString()
-                };
-                
-                db.Employees.InsertOnSubmit(employee);
-
-            try
-            {
-                db.SubmitChanges();
-                MessageBox.Show("Data Inserted");
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error");
-            }
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-                AddAccount();      
+            Employee employee = new Employee
+            {
+                FullName = view.TxtFirstName.Text + " " + view.TxtSurname.Text,
+                EAddress = view.TxtAddress.Text,
+                Email = view.TxtEmail.Text,
+                Password = view.TxtPassword.Text,
+                Phone = view.TxtPhone.Text,
+                DepartmentID = (int)view.ComboDepartment.SelectedValue,
+                DateJoined = DateTime.Now.ToShortDateString()
+            };
+            model.AddAccount(employee); 
         }
 
         public void DisplayView(Form curForm)
         {
-            view.SetUpControlls(model.LblFirstName,
-                model.LblSurname,
-                model.LblAddress,
-                model.LblEmail,
-                model.LblPassword,
-                model.LblPhone,
-                model.LblDepartment,
-                model.TxtFirstName,
-                model.TxtSurname,
-                model.TxtAddress,
-                model.TxtEmail,
-                model.TxtPassword,
-                model.TxtPhone,
-                model.ComboDepartment,
-                model.BtnCreate, curForm);
+            view.SetUpControlls(this.model.DisplayDepartment(), curForm);
         }
 
 

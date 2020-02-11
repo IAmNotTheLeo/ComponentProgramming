@@ -1,20 +1,30 @@
-﻿using System;
+﻿using Connection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ComponentProgramming.Models
 {
     class Admin
     {
-        private String username;
-        private String state;
-
-        public Admin(String username, String state)
+        public static bool LoginValidation(String email, String password)
         {
-            this.username = username;
-            this.state = state;
+            LINQDataContext db = new LINQDataContext();
+            var query = from user in db.Employees where user.Email == email && user.Password == password && user.DepartmentID == 7 select user;
+
+            if (query.Any())
+            {
+                MessageBox.Show("Correct");
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Wrong");
+                return false;
+            }
         }
     }
 }

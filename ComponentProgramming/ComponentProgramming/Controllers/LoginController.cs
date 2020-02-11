@@ -24,7 +24,7 @@ namespace ComponentProgramming.Controllers
 
         public void ButtonClick(object sender, EventArgs e)
         {
-            AdminController.LoginValidation(model.UsernameBox.Text, model.PasswordBox.Text);
+            //AdminController.LoginValidation(model.UsernameBox.Text, model.PasswordBox.Text);
         }
 
         public void DisplayView(Form curForm)

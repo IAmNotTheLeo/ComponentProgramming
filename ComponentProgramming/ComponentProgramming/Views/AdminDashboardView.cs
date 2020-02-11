@@ -11,6 +11,13 @@ namespace ComponentProgramming.Views
 {
     class AdminDashboardView : Panel
     {
+        CustomButton btnViewAddEmployee = new CustomButton();
+        CustomButton btnViewEditEmployee = new CustomButton();
+        CustomButton btnViewDeleteEmployee = new CustomButton();
+
+        public CustomButton BtnViewAddEmployee { get => btnViewAddEmployee; set => btnViewAddEmployee = value; }
+        public CustomButton BtnViewEditEmployee { get => btnViewEditEmployee; set => btnViewEditEmployee = value; }
+        public CustomButton BtnViewDeleteEmployee { get => btnViewDeleteEmployee; set => btnViewDeleteEmployee = value; }
         public void SetUpControlls(CustomButton btnViewAddEmployee, 
             CustomButton btnViewEditEmployee, 
             CustomButton btnViewDeleteEmployee, Form curForm)
@@ -45,11 +52,6 @@ namespace ComponentProgramming.Views
             btnViewDeleteEmployee.Location = new Point((Width - btnViewDeleteEmployee.Width) / 2,
                btnViewDeleteEmployee.Height + btnViewEditEmployee.Top + 20);
             btnViewDeleteEmployee.Anchor = AnchorStyles.None;
-
-           
-
-
-
         }
     }
 }

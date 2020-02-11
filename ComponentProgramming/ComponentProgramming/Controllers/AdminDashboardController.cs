@@ -19,9 +19,9 @@ namespace ComponentProgramming.Controllers
         {
             this.model = model;
             this.view = view;
-            model.BtnViewAddEmployee.Click += (sender, e) => btnViewAddEmployee_Click(sender, e);
-            model.BtnViewEditEmployee.Click += (sender, e) => btnViewEditEmployee_Click(sender, e);
-            model.BtnViewDeleteEmployee.Click += (sender, e) => btnViewDeleteEmployee_Click(sender, e);
+            view.BtnViewAddEmployee.Click += (sender, e) => btnViewAddEmployee_Click(sender, e);
+            view.BtnViewEditEmployee.Click += (sender, e) => btnViewEditEmployee_Click(sender, e);
+            view.BtnViewDeleteEmployee.Click += (sender, e) => btnViewDeleteEmployee_Click(sender, e);
         }
         private void btnViewAddEmployee_Click(object sender, EventArgs e)
         {
@@ -40,7 +40,7 @@ namespace ComponentProgramming.Controllers
 
         public void DisplayView(Form curForm)
         {
-            view.SetUpControlls(model.BtnViewAddEmployee, model.BtnViewEditEmployee, model.BtnViewDeleteEmployee, curForm);
+            view.SetUpControlls(view.BtnViewAddEmployee, view.BtnViewEditEmployee, view.BtnViewDeleteEmployee, curForm);
         }
     }
 }

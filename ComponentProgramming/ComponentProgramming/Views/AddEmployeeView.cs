@@ -3,34 +3,52 @@ using CustomControlls;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using ComponentProgramming.Models;
 
 namespace ComponentProgramming.Views
 {
     class AddEmployeeView : Panel
     {
-        public void SetUpControlls(CustomLabel lblfirstName,
-            CustomLabel lblSurname,
-            CustomLabel lblAddress,
-            CustomLabel lblEmail,
-            CustomLabel lblPassword,
-            CustomLabel lblPhone,
-            CustomLabel lblDepartment,
-            CustomTextBox2 txtfirstName, 
-            CustomTextBox2 txtSurname, 
-            CustomTextBox2 txtAddress, 
-            CustomTextBox2 txtEmail, 
-            CustomTextBox2 txtPassword, 
-            CustomTextBox3 txtPhone, 
-            ComboBox comboboxDepartment,
-            CustomButton btnCreate,
-            Form curForm)
+
+        CustomLabel lblFirstName = new CustomLabel();
+        CustomLabel lblSurname = new CustomLabel();
+        CustomLabel lblAddress = new CustomLabel();
+        CustomLabel lblEmail = new CustomLabel();
+        CustomLabel lblPassword = new CustomLabel();
+        CustomLabel lblPhone = new CustomLabel();
+        CustomLabel lblDepartment = new CustomLabel();
+        CustomTextBox2 txtFirstName = new CustomTextBox2();
+        CustomTextBox2 txtSurname = new CustomTextBox2();
+        CustomTextBox2 txtAddress = new CustomTextBox2();
+        CustomTextBox2 txtEmail = new CustomTextBox2();
+        CustomTextBox2 txtPassword = new CustomTextBox2();
+        CustomTextBox3 txtPhone = new CustomTextBox3();
+        CustomButton btnCreate = new CustomButton();
+        ComboBox comboDepartment = new ComboBox();
+
+        public CustomLabel LblFirstName { get => lblFirstName; set => lblFirstName = value; }
+        public CustomLabel LblSurname { get => lblSurname; set => lblSurname = value; }
+        public CustomLabel LblAddress { get => lblAddress; set => lblAddress = value; }
+        public CustomLabel LblEmail { get => lblEmail; set => lblEmail = value; }
+        public CustomLabel LblPassword { get => lblPassword; set => lblPassword = value; }
+        public CustomLabel LblPhone { get => lblPhone; set => lblPhone = value; }
+        public CustomLabel LblDepartment { get => lblDepartment; set => lblDepartment = value; }
+        public CustomTextBox2 TxtFirstName { get => txtFirstName; set => txtFirstName = value; }
+        public CustomTextBox2 TxtSurname { get => txtSurname; set => txtSurname = value; }
+        public CustomTextBox2 TxtAddress { get => txtAddress; set => txtAddress = value; }
+        public CustomTextBox2 TxtEmail { get => txtEmail; set => txtEmail = value; }
+        public CustomTextBox2 TxtPassword { get => txtPassword; set => txtPassword = value; }
+        public CustomTextBox3 TxtPhone { get => txtPhone; set => txtPhone = value; }
+        public CustomButton BtnCreate { get => btnCreate; set => btnCreate = value; }
+        public ComboBox ComboDepartment { get => comboDepartment; set => comboDepartment = value; }
+        public void SetUpControlls(ComboBox departmentList, Form curForm)
         {
             BackColor = Color.LightGray;
             Size = curForm.Size;
             Dock = DockStyle.Bottom;
 
-            lblfirstName.Text = "First Name";
-            lblfirstName.AutoSize = true;
+            lblFirstName.Text = "First Name";
+            lblFirstName.AutoSize = true;
 
             lblSurname.Text = "Surname";
             lblSurname.AutoSize = true;
@@ -50,14 +68,17 @@ namespace ComponentProgramming.Views
 
             lblDepartment.Text = "Department";
             lblDepartment.AutoSize = true;
-            comboboxDepartment.Font = new Font("Microsoft Sans Serif", 12);
-            comboboxDepartment.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboDepartment.Font = new Font("Microsoft Sans Serif", 12);
+            comboDepartment.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboDepartment.DataSource = departmentList.DataSource;
+            comboDepartment.DisplayMember = departmentList.DisplayMember;
+            comboDepartment.ValueMember = departmentList.ValueMember;
 
             btnCreate.Text = "Create Account";
 
             curForm.Controls.Add(this);
-            Controls.Add(lblfirstName);
-            Controls.Add(txtfirstName);
+            Controls.Add(lblFirstName);
+            Controls.Add(txtFirstName);
 
             Controls.Add(lblSurname);
             Controls.Add(txtSurname);
@@ -75,41 +96,27 @@ namespace ComponentProgramming.Views
             Controls.Add(txtPhone);
 
             Controls.Add(lblDepartment);
-            Controls.Add(comboboxDepartment);
+            Controls.Add(comboDepartment);
 
             Controls.Add(btnCreate);
 
-            SetPositions(lblfirstName, lblSurname, lblAddress, lblEmail, lblPassword, lblPhone, lblDepartment, txtfirstName, txtSurname, txtAddress, txtEmail, txtPassword, txtPhone, comboboxDepartment, btnCreate);
+            SetPositions();
 
         }
 
-        private void SetPositions(CustomLabel lblfirstName,
-            CustomLabel lblSurname,
-            CustomLabel lblAddress,
-            CustomLabel lblEmail,
-            CustomLabel lblPassword,
-            CustomLabel lblPhone,
-            CustomLabel lblDepartment,
-            CustomTextBox2 txtfirstName,
-            CustomTextBox2 txtSurname,
-            CustomTextBox2 txtAddress,
-            CustomTextBox2 txtEmail,
-            CustomTextBox2 txtPassword,
-            CustomTextBox3 txtPhone,
-            ComboBox comboboxDepartment,
-            CustomButton btnCreate)
+        private void SetPositions()
         {
 
-            lblfirstName.Location = new Point((Width - lblfirstName.Width) / 2,
-                Height / 5 - lblfirstName.Height / 2 - 60);
-            lblfirstName.Anchor = AnchorStyles.None;
+            lblFirstName.Location = new Point((Width - lblFirstName.Width) / 2,
+                Height / 5 - lblFirstName.Height / 2 - 60);
+            lblFirstName.Anchor = AnchorStyles.None;
 
-            txtfirstName.Location = new Point((Width - txtfirstName.Width) / 2,
-                txtfirstName.Height + lblfirstName.Top + 5);
-            txtfirstName.Anchor = AnchorStyles.None;
+            txtFirstName.Location = new Point((Width - txtFirstName.Width) / 2,
+                txtFirstName.Height + lblFirstName.Top + 5);
+            txtFirstName.Anchor = AnchorStyles.None;
 
             lblSurname.Location = new Point((Width - lblSurname.Width) / 2,
-                lblSurname.Height + txtfirstName.Top + 5);
+                lblSurname.Height + txtFirstName.Top + 5);
             lblSurname.Anchor = AnchorStyles.None;
 
             txtSurname.Location = new Point((Width - txtSurname.Width) / 2,
@@ -152,12 +159,12 @@ namespace ComponentProgramming.Views
                 lblDepartment.Height + txtPhone.Top + 5);
             lblDepartment.Anchor = AnchorStyles.None;
 
-            comboboxDepartment.Location = new Point((Width - comboboxDepartment.Width) / 2,
-                comboboxDepartment.Height + lblDepartment.Top + 5);
-            comboboxDepartment.Anchor = AnchorStyles.None;
+            comboDepartment.Location = new Point((Width - comboDepartment.Width) / 2,
+                comboDepartment.Height + lblDepartment.Top + 5);
+            comboDepartment.Anchor = AnchorStyles.None;
 
             btnCreate.Location = new Point((Width - btnCreate.Width) / 2,
-                btnCreate.Height + comboboxDepartment.Top + 5);
+                btnCreate.Height + comboDepartment.Top + 5);
             btnCreate.Anchor = AnchorStyles.None;
 
         }

@@ -5,41 +5,91 @@ using System.Text;
 using System.Threading.Tasks;
 using CustomControlls;
 using System.Windows.Forms;
+using Connection;
 
 namespace ComponentProgramming.Models
 {
     class EditEmployee
     {
-        CustomLabel lblName = new CustomLabel();
-        ComboBox comboName = new ComboBox();
-        CustomLabel lblAddress = new CustomLabel();
-        CustomLabel lblEmail = new CustomLabel();
-        CustomLabel lblPassword = new CustomLabel();
-        CustomLabel lblPhone = new CustomLabel();
-        CustomLabel lblDepartment = new CustomLabel();
-        CustomTextBox2 txtAddress = new CustomTextBox2();
-        CustomTextBox2 txtEmail = new CustomTextBox2();
-        CustomTextBox2 txtPassword = new CustomTextBox2();
-        CustomTextBox3 txtPhone = new CustomTextBox3();
-        CustomTextBox2 txtCurrentDepartment = new CustomTextBox2();
-        CustomLabel lblSelect = new CustomLabel();
-        ComboBox comboDepartment = new ComboBox();
-        CustomButton btnEdit = new CustomButton();
 
-        public CustomLabel LblName { get => lblName; set => lblName = value; }
-        public ComboBox ComboName { get => comboName; set => comboName = value; }
-        public CustomLabel LblAddress { get => lblAddress; set => lblAddress = value; }
-        public CustomLabel LblEmail { get => lblEmail; set => lblEmail = value; }
-        public CustomLabel LblPassword { get => lblPassword; set => lblPassword = value; }
-        public CustomLabel LblPhone { get => lblPhone; set => lblPhone = value; }
-        public CustomLabel LblDepartment { get => lblDepartment; set => lblDepartment = value; }
-        public CustomTextBox2 TxtAddress { get => txtAddress; set => txtAddress = value; }
-        public CustomTextBox2 TxtEmail { get => txtEmail; set => txtEmail = value; }
-        public CustomTextBox2 TxtPassword { get => txtPassword; set => txtPassword = value; }
-        public CustomTextBox3 TxtPhone { get => txtPhone; set => txtPhone = value; }
-        public CustomTextBox2 TxtCurrentDepartment { get => txtCurrentDepartment; set => txtCurrentDepartment = value; }
-        public CustomLabel LblSelect { get => lblSelect; set => lblSelect = value; }
-        public ComboBox ComboDepartment { get => comboDepartment; set => comboDepartment = value; }
-        public CustomButton BtnEdit { get => btnEdit; set => btnEdit = value; }
+        private LINQDataContext db = new LINQDataContext();
+        public ComboBox DisplayEmployees()
+        {
+            ComboBox employees = new ComboBox();
+            var query = from employee in db.Employees where employee.DepartmentID != 7 select employee;
+            foreach (var display in query)
+            {
+                employees.Items.Add(display.FullName);
+            }
+
+            return employees;
+        }
+
+        public ComboBox DisplayDepartment()
+        {
+            ComboBox comboBox = new ComboBox();
+            var query = from displayPlace in db.Departments where displayPlace.DepartmentID != 7 select displayPlace;
+            comboBox.DataSource = query;
+            comboBox.DisplayMember = "Place";
+            comboBox.ValueMember = "DepartmentID";
+            return comboBox;
+        }
+
+        public void EditAccount(string fullName,
+            string address,
+            string email,
+            string pass,
+            string phone,
+            int department)
+        {
+            var query = from employeeUpdate in db.Employees where employeeUpdate.FullName == fullName select employeeUpdate;
+
+            foreach (Employee employee in query)
+            {
+                employee.EAddress = address;
+                employee.Email = email;
+                employee.Password = pass;
+                employee.Phone = phone;
+                employee.DepartmentID = department;
+            }
+            try
+            {
+                db.SubmitChanges();
+                MessageBox.Show("Data Updated");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+
+        }
+
+          public string[] GetEmployeeDetails(string fullName)
+        {
+            string[] employeeDetails = new string[5];
+            var query = from employee in db.Employees
+                        join department in db.Departments on employee.DepartmentID equals department.DepartmentID
+                        where employee.FullName == fullName
+                        select new
+                        {
+                            EmployeeAddress = employee.EAddress,
+                            EmployeeEmail = employee.Email,
+                            EmployeePass = employee.Password,
+                            EmployeePhone = employee.Phone,
+                            DepartmentName = department.Place
+                        };
+
+            foreach (var details in query)
+            {
+                employeeDetails[0] = details.EmployeeAddress;
+                employeeDetails[1] = details.EmployeeEmail;
+                employeeDetails[2] = details.EmployeePass;
+                employeeDetails[3] = details.EmployeePhone.ToString();
+                employeeDetails[4] = details.DepartmentName;
+
+            }
+
+            return employeeDetails;
+        }
     }
 }

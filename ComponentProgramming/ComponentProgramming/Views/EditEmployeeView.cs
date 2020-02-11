@@ -6,27 +6,46 @@ using System.Threading.Tasks;
 using System.Drawing;
 using CustomControlls;
 using System.Windows.Forms;
+using ComponentProgramming.Models;
 
 namespace ComponentProgramming.Views
 {
     class EditEmployeeView : Panel
     {
-        public void SetUpControlls(CustomLabel lblName,
-            CustomLabel lblAddress,
-            CustomLabel lblEmail,
-            CustomLabel lblPassword,
-            CustomLabel lblPhone,
-            CustomLabel lblDepartment,
-            ComboBox comboName,
-            CustomTextBox2 txtAddress,
-            CustomTextBox2 txtEmail,
-            CustomTextBox2 txtPassword,
-            CustomTextBox3 txtPhone,
-            CustomTextBox2 txtCurrentDepartment,
-            CustomLabel lblSelect,
-            ComboBox comboDepartment,
-            CustomButton btnEdit,
-            Form curform)
+
+        CustomLabel lblName = new CustomLabel();
+        ComboBox comboName = new ComboBox();
+        CustomLabel lblAddress = new CustomLabel();
+        CustomLabel lblEmail = new CustomLabel();
+        CustomLabel lblPassword = new CustomLabel();
+        CustomLabel lblPhone = new CustomLabel();
+        CustomLabel lblDepartment = new CustomLabel();
+        CustomTextBox2 txtAddress = new CustomTextBox2();
+        CustomTextBox2 txtEmail = new CustomTextBox2();
+        CustomTextBox2 txtPassword = new CustomTextBox2();
+        CustomTextBox3 txtPhone = new CustomTextBox3();
+        CustomTextBox2 txtCurrentDepartment = new CustomTextBox2();
+        CustomLabel lblSelect = new CustomLabel();
+        ComboBox comboDepartment = new ComboBox();
+        CustomButton btnEdit = new CustomButton();
+
+        public CustomLabel LblName { get => lblName; set => lblName = value; }
+        public ComboBox ComboName { get => comboName; set => comboName = value; }
+        public CustomLabel LblAddress { get => lblAddress; set => lblAddress = value; }
+        public CustomLabel LblEmail { get => lblEmail; set => lblEmail = value; }
+        public CustomLabel LblPassword { get => lblPassword; set => lblPassword = value; }
+        public CustomLabel LblPhone { get => lblPhone; set => lblPhone = value; }
+        public CustomLabel LblDepartment { get => lblDepartment; set => lblDepartment = value; }
+        public CustomTextBox2 TxtAddress { get => txtAddress; set => txtAddress = value; }
+        public CustomTextBox2 TxtEmail { get => txtEmail; set => txtEmail = value; }
+        public CustomTextBox2 TxtPassword { get => txtPassword; set => txtPassword = value; }
+        public CustomTextBox3 TxtPhone { get => txtPhone; set => txtPhone = value; }
+        public CustomTextBox2 TxtCurrentDepartment { get => txtCurrentDepartment; set => txtCurrentDepartment = value; }
+        public CustomLabel LblSelect { get => lblSelect; set => lblSelect = value; }
+        public ComboBox ComboDepartment { get => comboDepartment; set => comboDepartment = value; }
+        public CustomButton BtnEdit { get => btnEdit; set => btnEdit = value; }
+
+        public void SetUpControlls(ComboBox employeesList, ComboBox departmentList, Form curform)
         {
             BackColor = Color.LightGray;
             Size = curform.Size;
@@ -59,6 +78,14 @@ namespace ComponentProgramming.Views
 
             btnEdit.Text = "Edit Account";
 
+            CopyComboBoxValues(employeesList);
+
+            comboDepartment.DataSource = departmentList.DataSource;
+            comboDepartment.DisplayMember = departmentList.DisplayMember;
+            comboDepartment.ValueMember = departmentList.ValueMember;
+            comboDepartment.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboDepartment.Font = new Font("Microsoft Sans Serif", 10);
+
             curform.Controls.Add(this);
             Controls.Add(lblName);
             Controls.Add(comboName);
@@ -82,24 +109,10 @@ namespace ComponentProgramming.Views
 
             Controls.Add(btnEdit);
 
-            SetPositions(lblName, lblAddress, lblEmail, lblPassword, lblPhone, lblDepartment, comboName, txtAddress, txtEmail, txtPassword, txtPhone, txtCurrentDepartment, lblSelect, comboDepartment, btnEdit);
+            SetPositions();
         }
 
-        private void SetPositions(CustomLabel lblName, 
-            CustomLabel lblAddress, 
-            CustomLabel lblEmail, 
-            CustomLabel lblPassword, 
-            CustomLabel lblPhone, 
-            CustomLabel lblDepartment, 
-            ComboBox comboName, 
-            CustomTextBox2 txtAddress, 
-            CustomTextBox2 txtEmail, 
-            CustomTextBox2 txtPassword, 
-            CustomTextBox3 txtPhone,
-            CustomTextBox2 txtCurrentDepartment,
-            CustomLabel lblSelect,
-            ComboBox comboDepartment,
-            CustomButton btnEdit)
+        private void SetPositions()
         {
             lblName.Location = new Point((Width - lblName.Width) / 2,
                 Height / 5 - lblName.Height / 2 - 60);
@@ -160,6 +173,23 @@ namespace ComponentProgramming.Views
             btnEdit.Location = new Point((Width - btnEdit.Width) / 2,
                 btnEdit.Height + comboDepartment.Top + 5);
             btnEdit.Anchor = AnchorStyles.None;
+        }
+
+        public void DisplaySelectedEmployee(string[] details)
+        {
+            txtAddress.Text = details[0];
+            txtEmail.Text = details[1];
+            txtPassword.Text = details[2];
+            txtPhone.Text = details[3];
+            txtCurrentDepartment.Text = details[4];
+        }
+
+        private void CopyComboBoxValues(ComboBox comboToCopy)
+        {
+            foreach(var item in comboToCopy.Items)
+            {
+                ComboName.Items.Add(item);
+            }
         }
     }
 }

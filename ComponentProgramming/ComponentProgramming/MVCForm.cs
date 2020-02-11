@@ -43,10 +43,10 @@ namespace ComponentProgramming
             EditEmployeeController editEmployeeController = new EditEmployeeController(editEmployee, editEmployeeView);
             editEmployeeController.DisplayView(this);*/
 
-            AddEmployee addEmployee = new AddEmployee();
+            /*AddEmployee addEmployee = new AddEmployee();
             AddEmployeeView addEmployeeView = new AddEmployeeView();
             AddEmployeeController addEmployeeController = new AddEmployeeController(addEmployee, addEmployeeView);
-            addEmployeeController.DisplayView(this);
+            addEmployeeController.DisplayView(this);*/
 
             /*DeleteEmployee deleteEmployee = new DeleteEmployee();
             DeleteEmployeeView deleteEmployeeView = new DeleteEmployeeView();

@@ -63,7 +63,6 @@
     <Compile Include="MVCForm.Designer.cs">
       <DependentUpon>MVCForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

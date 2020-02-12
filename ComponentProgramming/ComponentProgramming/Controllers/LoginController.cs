@@ -14,7 +14,6 @@ namespace ComponentProgramming.Controllers
     {
         private Login model;
         private LoginView view;
-        private Admin adminModel;
 
         public LoginController(Login model, LoginView view)
         {
@@ -25,7 +24,7 @@ namespace ComponentProgramming.Controllers
 
         public void ButtonClick(object sender, EventArgs e)
         {
-            this.adminModel.LoginValidation(this.view.UsernameBox.Text, this.view.PasswordBox.Text);
+            this.model.LoginValidation(this.view.UsernameBox.Text, this.view.PasswordBox.Text);
         }
 
         public void DisplayView(Form curForm)

@@ -11,10 +11,16 @@ namespace ComponentProgramming.Views
 {
     class DeleteEmployeeView : Panel
     {
-        public void SetUpControlls(CustomLabel lblName, 
-            ComboBox comboName, 
-            RichTextBox richtxtDetails, 
-            CustomButton btnDelete, Form curForm)
+
+        CustomLabel lblName = new CustomLabel();
+        ComboBox comboName = new ComboBox();
+        RichTextBox richtxtDetails = new RichTextBox();
+        CustomButton btnDelete = new CustomButton();
+        public CustomLabel LblName { get => lblName; set => lblName = value; }
+        public ComboBox ComboName { get => comboName; set => comboName = value; }
+        public RichTextBox RichtxtDetails { get => richtxtDetails; set => richtxtDetails = value; }
+        public CustomButton BtnDelete { get => btnDelete; set => btnDelete = value; }
+        public void SetUpControlls(ComboBox displayListEmployees, Form curForm)
         {
             BackColor = Color.LightGray;
             Size = curForm.Size;
@@ -25,6 +31,7 @@ namespace ComponentProgramming.Views
             comboName.DropDownStyle = ComboBoxStyle.DropDownList;
             comboName.DropDownHeight = 200;
             comboName.Font = new Font("Microsoft Sans Serif", 10);
+            CopyComboBoxValues(displayListEmployees);
 
 
             richtxtDetails.Multiline = true;
@@ -42,13 +49,10 @@ namespace ComponentProgramming.Views
 
             Controls.Add(btnDelete);
 
-            SetPositions(lblName, comboName, richtxtDetails, btnDelete);
+            SetPositions();
         }
 
-        private void SetPositions(CustomLabel lblName,
-            ComboBox comboName,
-            RichTextBox richtxtDetails,
-            CustomButton btnDelete)
+        private void SetPositions()
         {
             lblName.Location = new Point((Width - lblName.Width) / 2,
                 Height / 5 - lblName.Height / 2 - 60);
@@ -65,6 +69,23 @@ namespace ComponentProgramming.Views
             btnDelete.Location = new Point((Width - btnDelete.Width) / 2,
                 btnDelete.Height + richtxtDetails.Top + 250);
             btnDelete.Anchor = AnchorStyles.None;
+        }
+
+        public void DisplaySelectedEmployee(string details)
+        {
+            if (ComboName.Items.Count != 1)
+            {
+                richtxtDetails.Clear();
+            }
+
+            richtxtDetails.AppendText(details);
+        }
+        private void CopyComboBoxValues(ComboBox comboToCopy)
+        {
+            foreach (var item in comboToCopy.Items)
+            {
+                ComboName.Items.Add(item);
+            }
         }
     }
 }

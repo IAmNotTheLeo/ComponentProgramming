@@ -7,21 +7,25 @@ namespace ComponentProgramming.Views
 {
     class LoginView : Panel
     {
-        public void SetUpControlls(CustomTextBox2 usernameBox,
-            CustomLabel passwordLbl,
-            CustomLabel usernameLbl, 
-            CustomButton loginBtn, 
-            CustomTextBox2 passwordBox,
-            Form curForm)
+        private CustomTextBox2 usernameBox = new CustomTextBox2();
+        private CustomTextBox2 passwordBox = new CustomTextBox2();
+        private CustomLabel usernameLbl = new CustomLabel();
+        private CustomLabel passwordLbl = new CustomLabel();
+        private CustomButton loginBtn = new CustomButton();
+
+        public CustomTextBox2 UsernameBox { get => usernameBox; set => usernameBox = value; }
+        public CustomTextBox2 PasswordBox { get => passwordBox; set => passwordBox = value; }
+        public CustomLabel UsernameLbl { get => usernameLbl; set => usernameLbl = value; }
+        public CustomLabel PasswordLbl { get => passwordLbl; set => passwordLbl = value; }
+        public CustomButton LoginBtn { get => loginBtn; set => loginBtn = value; }
+        public void SetUpControlls(Form curForm)
         {
-            // Set LoginView to be transparent
+
             BackColor = Color.Transparent;
 
-            // Set LoginView Size
             Size = curForm.Size;
             Dock = DockStyle.Bottom;
 
-            // Set Text of controls
             usernameLbl.Text = "Username:";
             usernameLbl.AutoSize = true;
 
@@ -31,12 +35,10 @@ namespace ComponentProgramming.Views
 
             loginBtn.Text = "Login";
 
-            // Set up password TextBox
             passwordBox.BorderStyle = BorderStyle.None;
             passwordBox.Size = new Size(200, 21);
             passwordBox.Font = new Font("Microsoft Sans Serif", 12);
 
-            // Add LoginView to Form and other controls to LoginView
             curForm.Controls.Add(this);
             Controls.Add(usernameLbl);
             Controls.Add(usernameBox);
@@ -44,14 +46,9 @@ namespace ComponentProgramming.Views
             Controls.Add(passwordBox);
             Controls.Add(loginBtn);
 
-            SetPositions(usernameBox, passwordLbl, usernameLbl, loginBtn, passwordBox);
+            SetPositions();
         }
-
-        private void SetPositions(CustomTextBox2 usernameBox,
-            CustomLabel passwordLbl,
-            CustomLabel usernameLbl,
-            CustomButton loginBtn,
-            TextBox passwordBox)
+        private void SetPositions()
         {
             usernameLbl.Location = new Point((Width - usernameLbl.Width * 2) / 2, 
                 (Height / 2 - usernameLbl.Height) / 2);

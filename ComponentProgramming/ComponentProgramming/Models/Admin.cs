@@ -10,7 +10,7 @@ namespace ComponentProgramming.Models
 {
     class Admin
     {
-        public static bool LoginValidation(String email, String password)
+        public bool LoginValidation(String email, String password)
         {
             LINQDataContext db = new LINQDataContext();
             var query = from user in db.Employees where user.Email == email && user.Password == password && user.DepartmentID == 7 select user;

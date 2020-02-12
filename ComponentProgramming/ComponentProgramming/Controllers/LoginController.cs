@@ -14,26 +14,23 @@ namespace ComponentProgramming.Controllers
     {
         private Login model;
         private LoginView view;
+        private Admin adminModel;
 
         public LoginController(Login model, LoginView view)
         {
             this.model = model;
             this.view = view;
-            model.LoginBtn.Click += (sender, e) => ButtonClick(sender, e);
+            this.view.LoginBtn.Click += (sender, e) => ButtonClick(sender, e);
         }
 
         public void ButtonClick(object sender, EventArgs e)
         {
-            //AdminController.LoginValidation(model.UsernameBox.Text, model.PasswordBox.Text);
+            this.adminModel.LoginValidation(this.view.UsernameBox.Text, this.view.PasswordBox.Text);
         }
 
         public void DisplayView(Form curForm)
         {
-            view.SetUpControlls(model.UsernameBox, 
-                model.PasswordLbl, 
-                model.UsernameLbl, 
-                model.LoginBtn, 
-                model.PasswordBox, curForm);
+            view.SetUpControlls(curForm);
         }
     }
 }

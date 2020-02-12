@@ -33,10 +33,10 @@ namespace ComponentProgramming
             InitializeComponent();
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
-            /*Login loginModel = new Login();
+            Login loginModel = new Login();
             LoginView loginView = new LoginView();
             LoginController loginController = new LoginController(loginModel, loginView);
-            loginController.DisplayView(this);*/
+            loginController.DisplayView(this);
 
             /*EditEmployee editEmployee = new EditEmployee();
             EditEmployeeView editEmployeeView = new EditEmployeeView();

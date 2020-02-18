@@ -18,11 +18,13 @@ namespace ComponentProgramming.Controllers
         private AddEmployee model;
         private AddEmployeeView view;
         private LINQDataContext db;
-        public AddEmployeeController(AddEmployee model, AddEmployeeView view)
+        private Form curForm;
+        public AddEmployeeController(AddEmployee model, AddEmployeeView view, Form curForm)
         {
             db = new LINQDataContext();
             this.model = model;
             this.view = view;
+            this.curForm = curForm;
             view.BtnCreate.Click += (sender, e) => btnCreate_Click(sender, e);
             
         }
@@ -42,7 +44,7 @@ namespace ComponentProgramming.Controllers
             model.AddAccount(employee); 
         }
 
-        public void DisplayView(Form curForm)
+        public void DisplayView()
         {
             view.SetUpControlls(this.model.DisplayDepartment(), curForm);
         }

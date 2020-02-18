@@ -15,11 +15,13 @@ namespace ComponentProgramming.Controllers
         private LINQDataContext db;
         private DeleteEmployee model;
         private DeleteEmployeeView view;
-        public DeleteEmployeeController(DeleteEmployee model, DeleteEmployeeView view)
+        private Form curForm;
+        public DeleteEmployeeController(DeleteEmployee model, DeleteEmployeeView view, Form curForm)
         {
             db = new LINQDataContext();
             this.model = model;
             this.view = view;
+            this.curForm = curForm;
             this.view.BtnDelete.Click += (sender, e) => btnDelete_Click(sender, e);
             this.view.ComboName.SelectedIndexChanged += (sender, e) => comboName_SelectedIndexChanged(sender, e);
             
@@ -35,9 +37,9 @@ namespace ComponentProgramming.Controllers
             this.view.DisplaySelectedEmployee(this.model.GetEmployeeDetails(this.view.ComboName.Text));
         }
 
-        public void DisplayView(Form curForm)
+        public void DisplayView()
         {
-            view.SetUpControlls(this.model.DisplayEmployees(), curForm);
+            view.SetUpControlls(this.model.DisplayEmployees(), this.curForm);
         }
     }
 }

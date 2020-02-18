@@ -9,6 +9,6 @@ namespace ComponentProgramming.Models
 {
     interface Display
     {
-        void DisplayView(Form curform);
+        void DisplayView();
     }
 }

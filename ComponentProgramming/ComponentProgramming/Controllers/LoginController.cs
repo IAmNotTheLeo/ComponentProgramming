@@ -14,22 +14,31 @@ namespace ComponentProgramming.Controllers
     {
         private Login model;
         private LoginView view;
+        private Form curForm;
 
-        public LoginController(Login model, LoginView view)
+        public LoginController(Login model, LoginView view, Form curForm)
         {
             this.model = model;
             this.view = view;
+            this.curForm = curForm;
             this.view.LoginBtn.Click += (sender, e) => ButtonClick(sender, e);
         }
 
         public void ButtonClick(object sender, EventArgs e)
         {
-            this.model.LoginValidation(this.view.UsernameBox.Text, this.view.PasswordBox.Text);
+            if (this.model.LoginValidation(this.view.UsernameBox.Text, this.view.PasswordBox.Text))
+            {
+                MVCForm.DisposeView(this.view);
+                AdminDashboard adminDashboard = new AdminDashboard();
+                AdminDashboardView adminDashboardView = new AdminDashboardView();
+                AdminDashboardController adminDashboardController = new AdminDashboardController(adminDashboard, adminDashboardView, this.curForm);
+                adminDashboardController.DisplayView();
+            }
         }
 
-        public void DisplayView(Form curForm)
+        public void DisplayView()
         {
-            view.SetUpControlls(curForm);
+            this.view.SetUpControlls(this.curForm);
         }
     }
 }

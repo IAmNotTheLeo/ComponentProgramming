@@ -16,12 +16,14 @@ namespace ComponentProgramming.Controllers
         private LINQDataContext db;
         private EditEmployee model;
         private EditEmployeeView view;
+        private Form curForm;
 
-        public EditEmployeeController(EditEmployee model, EditEmployeeView view)
+        public EditEmployeeController(EditEmployee model, EditEmployeeView view, Form curForm)
         {
             db = new LINQDataContext();
             this.model = model;
             this.view = view;
+            this.curForm = curForm;
             this.view.ComboName.SelectedIndexChanged += (sender, e) => comboName_SelectedIndexChanged(sender, e);
             this.view.BtnEdit.Click += (sender, e) => btnEdit_Click(sender, e);
         }
@@ -41,9 +43,9 @@ namespace ComponentProgramming.Controllers
             this.view.DisplaySelectedEmployee(this.model.GetEmployeeDetails(this.view.ComboName.Text));
         }
 
-        public void DisplayView(Form curForm)
+        public void DisplayView()
         {
-            view.SetUpControlls(this.model.DisplayEmployees(), this.model.DisplayDepartment(), curForm);
+            view.SetUpControlls(this.model.DisplayEmployees(), this.model.DisplayDepartment(), this.curForm);
         }
     }
 }

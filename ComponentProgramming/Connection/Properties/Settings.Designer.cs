@@ -26,11 +26,11 @@ namespace Connection.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=sql-server;Initial Catalog=lc8884l;Persist Security Info=True;User ID" +
-            "=lc8884l;Password=!1SQLServer")]
-        public string lc8884lConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=sql-server;Initial Catalog=lb6972q;Persist Security Info=True;User ID" +
+            "=lb6972q;Password=!1SQLServer")]
+        public string lb6972qConnectionString {
             get {
-                return ((string)(this["lc8884lConnectionString"]));
+                return ((string)(this["lb6972qConnectionString"]));
             }
         }
     }

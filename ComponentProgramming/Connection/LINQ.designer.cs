@@ -22,7 +22,7 @@ namespace Connection
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="lc8884l")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="lb6972q")]
 	public partial class LINQDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -48,7 +48,7 @@ namespace Connection
     #endregion
 		
 		public LINQDataContext() : 
-				base(global::Connection.Properties.Settings.Default.lc8884lConnectionString, mappingSource)
+				base(global::Connection.Properties.Settings.Default.lb6972qConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

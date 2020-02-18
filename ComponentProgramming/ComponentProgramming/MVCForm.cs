@@ -35,30 +35,13 @@ namespace ComponentProgramming
 
             Login loginModel = new Login();
             LoginView loginView = new LoginView();
-            LoginController loginController = new LoginController(loginModel, loginView);
-            loginController.DisplayView(this);
+            LoginController loginController = new LoginController(loginModel, loginView, this);
+            loginController.DisplayView();
+        }
 
-            /*EditEmployee editEmployee = new EditEmployee();
-            EditEmployeeView editEmployeeView = new EditEmployeeView();
-            EditEmployeeController editEmployeeController = new EditEmployeeController(editEmployee, editEmployeeView);
-            editEmployeeController.DisplayView(this);*/
-
-            /*AddEmployee addEmployee = new AddEmployee();
-            AddEmployeeView addEmployeeView = new AddEmployeeView();
-            AddEmployeeController addEmployeeController = new AddEmployeeController(addEmployee, addEmployeeView);
-            addEmployeeController.DisplayView(this);*/
-
-            /*DeleteEmployee deleteEmployee = new DeleteEmployee();
-            DeleteEmployeeView deleteEmployeeView = new DeleteEmployeeView();
-            DeleteEmployeeController deleteEmployeeController = new DeleteEmployeeController(deleteEmployee, deleteEmployeeView);
-            deleteEmployeeController.DisplayView(this);*/
-
-            /*AdminDashboard adminDashboard = new AdminDashboard();
-            AdminDashboardView adminDashboardView = new AdminDashboardView();
-            AdminDashboardController adminDashboardController = new AdminDashboardController(adminDashboard, adminDashboardView);
-            adminDashboardController.DisplayView(this);*/
-
-            
+        public static void DisposeView(Panel view)
+        {
+            view.Dispose();
         }
         protected override void OnPaint(PaintEventArgs e)
         {

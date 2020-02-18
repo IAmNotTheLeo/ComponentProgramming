@@ -15,32 +15,51 @@ namespace ComponentProgramming.Controllers
     {
         private AdminDashboard model;
         private AdminDashboardView view;
-        public AdminDashboardController(AdminDashboard model, AdminDashboardView view)
+        private Form curForm;
+        public AdminDashboardController(AdminDashboard model, AdminDashboardView view, Form curForm)
         {
             this.model = model;
             this.view = view;
-            view.BtnViewAddEmployee.Click += (sender, e) => btnViewAddEmployee_Click(sender, e);
-            view.BtnViewEditEmployee.Click += (sender, e) => btnViewEditEmployee_Click(sender, e);
-            view.BtnViewDeleteEmployee.Click += (sender, e) => btnViewDeleteEmployee_Click(sender, e);
+            this.curForm = curForm;
+            view.BtnViewAddEmployee.Click += (sender, e) => ButtonClick(sender, e);
+            view.BtnViewEditEmployee.Click += (sender, e) => ButtonClick(sender, e);
+            view.BtnViewDeleteEmployee.Click += (sender, e) => ButtonClick(sender, e);
         }
-        private void btnViewAddEmployee_Click(object sender, EventArgs e)
+        private void ButtonClick(object sender, EventArgs e)
         {
-            MessageBox.Show("Test1");
+            string clickedButton = (sender as Button).Text;
+            
+            switch(clickedButton)
+            {
+                case "Add Employee":
+                    MVCForm.DisposeView(this.view);
+                    AddEmployee addEmployeeDashboard = new AddEmployee();
+                    AddEmployeeView addEmployeeView = new AddEmployeeView();
+                    AddEmployeeController addEmployeeController = new AddEmployeeController(addEmployeeDashboard, addEmployeeView, this.curForm);
+                    addEmployeeController.DisplayView();
+                    break;
+
+                case "Edit Employee":
+                    MVCForm.DisposeView(this.view);
+                    EditEmployee editEmployeeDashboard = new EditEmployee();
+                    EditEmployeeView editEmployeeView = new EditEmployeeView();
+                    EditEmployeeController editEmployeeController = new EditEmployeeController(editEmployeeDashboard, editEmployeeView, this.curForm);
+                    editEmployeeController.DisplayView();
+                    break;
+
+                case "Delete Employee":
+                    MVCForm.DisposeView(this.view);
+                    DeleteEmployee deleteEmployeeDashboard = new DeleteEmployee();
+                    DeleteEmployeeView deleteEmployeeView = new DeleteEmployeeView();
+                    DeleteEmployeeController deleteEmployeeController = new DeleteEmployeeController(deleteEmployeeDashboard, deleteEmployeeView, this.curForm);
+                    deleteEmployeeController.DisplayView();
+                    break;
+            }
         }
 
-        private void btnViewEditEmployee_Click(object sender, EventArgs e)
+        public void DisplayView()
         {
-            MessageBox.Show("Test2");
-        }
-
-        private void btnViewDeleteEmployee_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Test3");
-        }
-
-        public void DisplayView(Form curForm)
-        {
-            view.SetUpControlls(view.BtnViewAddEmployee, view.BtnViewEditEmployee, view.BtnViewDeleteEmployee, curForm);
+            this.view.SetUpControlls(view.BtnViewAddEmployee, view.BtnViewEditEmployee, view.BtnViewDeleteEmployee, this.curForm);
         }
     }
 }

@@ -22,6 +22,16 @@ namespace ComponentProgramming.Models
             comboBox.ValueMember = "DepartmentID";
             return comboBox;
         }
+
+        public ComboBox DisplayRole()
+        {
+            ComboBox comboBox = new ComboBox();
+            var query = from displayRole in db.Roles select displayRole;
+            comboBox.DataSource = query;
+            comboBox.DisplayMember = "Role1";
+            comboBox.ValueMember = "RoleID";
+            return comboBox;
+        }
         public void AddAccount(Employee employee)
         {
             db.Employees.InsertOnSubmit(employee);

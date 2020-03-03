@@ -10,5 +10,21 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=sql-server;Initial Catalog=lb6972q;Persist Security Info=True;User ID=lb6972q;Password=!1SQLServer</Value>
     </Setting>
+    <Setting Name="lc8884lConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=sql-server;Initial Catalog=lc8884l;Persist Security Info=True;User ID=lc8884l&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=sql-server;Initial Catalog=lc8884l;Persist Security Info=True;User ID=lc8884l</Value>
+    </Setting>
+    <Setting Name="lc8884lConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=sql-server;Initial Catalog=lc8884l;User ID=lc8884l;Password=!1SQLServer&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=sql-server;Initial Catalog=lc8884l;User ID=lc8884l;Password=!1SQLServer</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -35,12 +35,23 @@ namespace ComponentProgramming.Models
             return comboBox;
         }
 
+        public ComboBox DisplayRole()
+        {
+            ComboBox comboBox = new ComboBox();
+            var query = from displayRole in db.Roles select displayRole;
+            comboBox.DataSource = query;
+            comboBox.DisplayMember = "Role1";
+            comboBox.ValueMember = "RoleID";
+            return comboBox;
+        }
+
         public void EditAccount(string fullName,
             string address,
             string email,
             string pass,
             string phone,
-            int department)
+            int department,
+            int role)
         {
             var query = from employeeUpdate in db.Employees where employeeUpdate.FullName == fullName select employeeUpdate;
 
@@ -51,6 +62,7 @@ namespace ComponentProgramming.Models
                 employee.Password = pass;
                 employee.Phone = phone;
                 employee.DepartmentID = department;
+                employee.RoleID = role;
             }
             try
             {
@@ -66,9 +78,10 @@ namespace ComponentProgramming.Models
 
           public string[] GetEmployeeDetails(string fullName)
         {
-            string[] employeeDetails = new string[5];
+            string[] employeeDetails = new string[6];
             var query = from employee in db.Employees
                         join department in db.Departments on employee.DepartmentID equals department.DepartmentID
+                        join role in db.Roles on employee.RoleID equals role.RoleID
                         where employee.FullName == fullName
                         select new
                         {
@@ -76,7 +89,8 @@ namespace ComponentProgramming.Models
                             EmployeeEmail = employee.Email,
                             EmployeePass = employee.Password,
                             EmployeePhone = employee.Phone,
-                            DepartmentName = department.Place
+                            DepartmentName = department.Place,
+                            RoleName = role.Role1
                         };
 
             foreach (var details in query)
@@ -86,6 +100,7 @@ namespace ComponentProgramming.Models
                 employeeDetails[2] = details.EmployeePass;
                 employeeDetails[3] = details.EmployeePhone.ToString();
                 employeeDetails[4] = details.DepartmentName;
+                employeeDetails[5] = details.RoleName;
 
             }
 

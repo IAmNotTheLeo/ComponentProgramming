@@ -48,16 +48,18 @@ namespace ComponentProgramming.Models
 
         public string GetEmployeeDetails(string fullName)
         {
-            
+
             var query = from employee in db.Employees
                         join department in db.Departments on employee.DepartmentID equals department.DepartmentID
+                        join role in db.Roles on employee.RoleID equals role.RoleID
                         where employee.FullName == fullName
                         select new
                         {
                             EmployeeAddress = employee.EAddress,
                             EmployeeEmail = employee.Email,
                             EmployeePhone = employee.Phone,
-                            DepartmentName = department.Place
+                            DepartmentName = department.Place,
+                            RoleName = role.Role1
                         };
             
             foreach (var details in query)
@@ -66,7 +68,8 @@ namespace ComponentProgramming.Models
                     "Employee Address: \n" + details.EmployeeAddress + "\n\n" +
                     "Employee Email: \n" + details.EmployeeEmail + "\n\n" +
                     "Employee Phone: \n" + details.EmployeePhone + "\n\n" +
-                    "Department: \n" + details.DepartmentName + "\n\n";
+                    "Department: \n" + details.DepartmentName + "\n\n" +
+                    "Role: \n" + details.RoleName + "\n\n";
             }
 
             return employeeDetails;

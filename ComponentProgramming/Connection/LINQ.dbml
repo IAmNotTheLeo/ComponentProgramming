@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="lc8884l" Class="LINQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=sql-server;Initial Catalog=lc8884l;Persist Security Info=True;User ID=lc8884l" SettingsObjectName="Connection.Properties.Settings" SettingsPropertyName="lc8884lConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=sql-server;Initial Catalog=lc8884l;User ID=lc8884l" SettingsObjectName="Connection.Properties.Settings" SettingsPropertyName="lc8884lConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Department" Member="Departments">
     <Type Name="Department">
       <Column Name="DepartmentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -12,17 +12,18 @@
   <Table Name="dbo.Employee" Member="Employees">
     <Type Name="Employee">
       <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="FullName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FullName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="EAddress" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Phone" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RoleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="DepartmentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="DateJoined" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="Employee_HolidayRequest" Member="HolidayRequests" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="HolidayRequest" />
       <Association Name="Employee_HolidayTaken" Member="HolidayTakens" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="HolidayTaken" />
-      <Association Name="Employee_Role" Member="Roles" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Role" />
       <Association Name="Department_Employee" Member="Department" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="Department" IsForeignKey="true" />
+      <Association Name="Role_Employee" Member="Role" ThisKey="RoleID" OtherKey="RoleID" Type="Role" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.HolidayRequest" Member="HolidayRequests">
@@ -50,9 +51,8 @@
   <Table Name="dbo.Role" Member="Roles">
     <Type Name="Role">
       <Column Name="RoleID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Role" Member="Role1" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Association Name="Employee_Role" Member="Employee" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Employee" IsForeignKey="true" />
+      <Column Name="Role" Member="Role1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Role_Employee" Member="Employees" ThisKey="RoleID" OtherKey="RoleID" Type="Employee" />
     </Type>
   </Table>
 </Database>

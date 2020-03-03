@@ -38,6 +38,7 @@ namespace ComponentProgramming.Controllers
                 Email = view.TxtEmail.Text,
                 Password = view.TxtPassword.Text,
                 Phone = view.TxtPhone.Text,
+                RoleID = (int)view.ComboRole.SelectedValue,
                 DepartmentID = (int)view.ComboDepartment.SelectedValue,
                 DateJoined = DateTime.Now.ToShortDateString()
             };
@@ -46,7 +47,7 @@ namespace ComponentProgramming.Controllers
 
         public void DisplayView()
         {
-            view.SetUpControlls(this.model.DisplayDepartment(), curForm);
+            view.SetUpControlls(this.model.DisplayDepartment(), this.model.DisplayRole(), curForm);
         }
 
 

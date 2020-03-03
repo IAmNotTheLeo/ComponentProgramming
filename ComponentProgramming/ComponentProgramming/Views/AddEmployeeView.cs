@@ -16,6 +16,7 @@ namespace ComponentProgramming.Views
         private CustomLabel lblEmail = new CustomLabel();
         private CustomLabel lblPassword = new CustomLabel();
         private CustomLabel lblPhone = new CustomLabel();
+        private CustomLabel lblRole = new CustomLabel();
         private CustomLabel lblDepartment = new CustomLabel();
         private CustomTextBox2 txtFirstName = new CustomTextBox2();
         private CustomTextBox2 txtSurname = new CustomTextBox2();
@@ -25,6 +26,7 @@ namespace ComponentProgramming.Views
         private CustomTextBox3 txtPhone = new CustomTextBox3();
         private CustomButton btnCreate = new CustomButton();
         private ComboBox comboDepartment = new ComboBox();
+        private ComboBox comboRole = new ComboBox();
 
         public CustomLabel LblFirstName { get => lblFirstName; set => lblFirstName = value; }
         public CustomLabel LblSurname { get => lblSurname; set => lblSurname = value; }
@@ -32,6 +34,8 @@ namespace ComponentProgramming.Views
         public CustomLabel LblEmail { get => lblEmail; set => lblEmail = value; }
         public CustomLabel LblPassword { get => lblPassword; set => lblPassword = value; }
         public CustomLabel LblPhone { get => lblPhone; set => lblPhone = value; }
+
+        
         public CustomLabel LblDepartment { get => lblDepartment; set => lblDepartment = value; }
         public CustomTextBox2 TxtFirstName { get => txtFirstName; set => txtFirstName = value; }
         public CustomTextBox2 TxtSurname { get => txtSurname; set => txtSurname = value; }
@@ -41,7 +45,10 @@ namespace ComponentProgramming.Views
         public CustomTextBox3 TxtPhone { get => txtPhone; set => txtPhone = value; }
         public CustomButton BtnCreate { get => btnCreate; set => btnCreate = value; }
         public ComboBox ComboDepartment { get => comboDepartment; set => comboDepartment = value; }
-        public void SetUpControlls(ComboBox departmentList, Form curForm)
+        public CustomLabel LblRole { get => lblRole; set => lblRole = value; }
+        public ComboBox ComboRole { get => comboRole; set => comboRole = value; }
+
+        public void SetUpControlls(ComboBox departmentList, ComboBox roleList ,Form curForm)
         {
             BackColor = Color.LightGray;
             Size = curForm.Size;
@@ -74,6 +81,14 @@ namespace ComponentProgramming.Views
             comboDepartment.DisplayMember = departmentList.DisplayMember;
             comboDepartment.ValueMember = departmentList.ValueMember;
 
+            lblRole.Text = "Role";
+            lblRole.AutoSize = true;
+            comboRole.Font = new Font("Microsoft Sans Serif", 12);
+            comboRole.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboRole.DataSource = roleList.DataSource;
+            comboRole.DisplayMember = roleList.DisplayMember;
+            comboRole.ValueMember = roleList.ValueMember;
+
             btnCreate.Text = "Create Account";
 
             curForm.Controls.Add(this);
@@ -94,6 +109,9 @@ namespace ComponentProgramming.Views
 
             Controls.Add(lblPhone);
             Controls.Add(txtPhone);
+
+            Controls.Add(lblRole);
+            Controls.Add(comboRole);
 
             Controls.Add(lblDepartment);
             Controls.Add(comboDepartment);
@@ -162,8 +180,16 @@ namespace ComponentProgramming.Views
                 comboDepartment.Height + lblDepartment.Top + 5);
             comboDepartment.Anchor = AnchorStyles.None;
 
+            lblRole.Location = new Point((Width - lblRole.Width) / 2,
+                lblRole.Height + comboDepartment.Top + 5);
+            lblRole.Anchor = AnchorStyles.None;
+
+            comboRole.Location = new Point((Width - comboRole.Width) / 2,
+                comboRole.Height + lblRole.Top + 5);
+            comboRole.Anchor = AnchorStyles.None;
+
             btnCreate.Location = new Point((Width - btnCreate.Width) / 2,
-                btnCreate.Height + comboDepartment.Top + 5);
+                btnCreate.Height + comboRole.Top + 5);
             btnCreate.Anchor = AnchorStyles.None;
 
         }

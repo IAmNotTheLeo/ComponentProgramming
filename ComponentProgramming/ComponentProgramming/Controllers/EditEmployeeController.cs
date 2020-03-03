@@ -34,8 +34,9 @@ namespace ComponentProgramming.Controllers
                 view.TxtAddress.Text,
                 view.TxtEmail.Text,
                 view.TxtPassword.Text,
-                view.TxtPhone.Text, 
-                (int)view.ComboDepartment.SelectedValue);
+                view.TxtPhone.Text,
+                (int)view.ComboDepartment.SelectedValue,
+                (int)view.ComboRole.SelectedValue);
         }
 
         private void comboName_SelectedIndexChanged(object sender, EventArgs e)
@@ -45,7 +46,7 @@ namespace ComponentProgramming.Controllers
 
         public void DisplayView()
         {
-            view.SetUpControlls(this.model.DisplayEmployees(), this.model.DisplayDepartment(), this.curForm);
+            view.SetUpControlls(this.model.DisplayEmployees(), this.model.DisplayDepartment(), this.model.DisplayRole(), this.curForm);
         }
     }
 }

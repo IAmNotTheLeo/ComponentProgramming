@@ -37,6 +37,8 @@ namespace ComponentProgramming
             LoginView loginView = new LoginView();
             LoginController loginController = new LoginController(loginModel, loginView, this);
             loginController.DisplayView();
+
+            
         }
 
         public static void DisposeView(Panel view)

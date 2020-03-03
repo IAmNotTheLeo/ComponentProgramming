@@ -20,13 +20,17 @@ namespace ComponentProgramming.Views
         private CustomLabel lblPassword = new CustomLabel();
         private CustomLabel lblPhone = new CustomLabel();
         private CustomLabel lblDepartment = new CustomLabel();
+        private CustomLabel lblRole = new CustomLabel();
         private CustomTextBox2 txtAddress = new CustomTextBox2();
         private CustomTextBox2 txtEmail = new CustomTextBox2();
         private CustomTextBox2 txtPassword = new CustomTextBox2();
         private CustomTextBox3 txtPhone = new CustomTextBox3();
         private CustomTextBox2 txtCurrentDepartment = new CustomTextBox2();
+        private CustomTextBox2 txtCurrentRole = new CustomTextBox2();
         private CustomLabel lblSelect = new CustomLabel();
         private ComboBox comboDepartment = new ComboBox();
+        private CustomLabel lblSelect2 = new CustomLabel();
+        private ComboBox comboRole = new ComboBox();
         private CustomButton btnEdit = new CustomButton();
 
         public CustomLabel LblName { get => lblName; set => lblName = value; }
@@ -44,8 +48,12 @@ namespace ComponentProgramming.Views
         public CustomLabel LblSelect { get => lblSelect; set => lblSelect = value; }
         public ComboBox ComboDepartment { get => comboDepartment; set => comboDepartment = value; }
         public CustomButton BtnEdit { get => btnEdit; set => btnEdit = value; }
+        public CustomLabel LblSelectRole2 { get => lblSelect2; set => lblSelect2 = value; }
+        public ComboBox ComboRole { get => comboRole; set => comboRole = value; }
+        public CustomLabel LblRole { get => lblRole; set => lblRole = value; }
+        public CustomTextBox2 TxtCurrentRole { get => txtCurrentRole; set => txtCurrentRole = value; }
 
-        public void SetUpControlls(ComboBox employeesList, ComboBox departmentList, Form curform)
+        public void SetUpControlls(ComboBox employeesList, ComboBox departmentList, ComboBox roleList, Form curform)
         {
             BackColor = Color.LightGray;
             Size = curform.Size;
@@ -76,6 +84,15 @@ namespace ComponentProgramming.Views
             comboName.DropDownHeight = 200;
             comboName.Font = new Font("Microsoft Sans Serif", 10);
 
+            lblRole.Text = "Role";
+            lblRole.AutoSize = true;
+            txtCurrentRole.ReadOnly = true;
+            lblSelect2.Text = "Select:";
+            lblSelect2.AutoSize = true;
+            comboRole.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboRole.DropDownHeight = 200;
+            comboRole.Font = new Font("Microsoft Sans Serif", 10);
+
             btnEdit.Text = "Edit Account";
 
             CopyComboBoxValues(employeesList);
@@ -85,6 +102,13 @@ namespace ComponentProgramming.Views
             comboDepartment.ValueMember = departmentList.ValueMember;
             comboDepartment.DropDownStyle = ComboBoxStyle.DropDownList;
             comboDepartment.Font = new Font("Microsoft Sans Serif", 10);
+
+            comboRole.DataSource = roleList.DataSource;
+            comboRole.DisplayMember = roleList.DisplayMember;
+            comboRole.ValueMember = roleList.ValueMember;
+            comboRole.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboRole.Font = new Font("Microsoft Sans Serif", 10);
+
 
             curform.Controls.Add(this);
             Controls.Add(lblName);
@@ -106,6 +130,11 @@ namespace ComponentProgramming.Views
             Controls.Add(txtCurrentDepartment);
             Controls.Add(lblSelect);
             Controls.Add(comboDepartment);
+
+            Controls.Add(lblRole);
+            Controls.Add(txtCurrentRole);
+            Controls.Add(lblSelect2);
+            Controls.Add(comboRole);
 
             Controls.Add(btnEdit);
 
@@ -169,8 +198,24 @@ namespace ComponentProgramming.Views
                 comboDepartment.Height + txtCurrentDepartment.Top + 12);
             comboDepartment.Anchor = AnchorStyles.None;
 
+            lblRole.Location = new Point((Width - lblRole.Width) / 2,
+                lblRole.Height + comboDepartment.Top + 5);
+            lblRole.Anchor = AnchorStyles.None;
+
+            txtCurrentRole.Location = new Point((Width - txtCurrentRole.Width) / 2,
+                txtCurrentRole.Height + lblRole.Top + 10);
+            txtCurrentRole.Anchor = AnchorStyles.None;
+
+            lblSelect2.Location = new Point((Width - comboRole.Width * 2 - 55) / 2,
+                lblSelect2.Height + txtCurrentRole.Top + 8);
+            lblSelect2.Anchor = AnchorStyles.None;
+
+            comboRole.Location = new Point((Width - comboRole.Width) / 2,
+                comboRole.Height + txtCurrentRole.Top + 10);
+            comboRole.Anchor = AnchorStyles.None;
+
             btnEdit.Location = new Point((Width - btnEdit.Width) / 2,
-                btnEdit.Height + comboDepartment.Top + 5);
+                btnEdit.Height + comboRole.Top + 5);
             btnEdit.Anchor = AnchorStyles.None;
         }
 
@@ -181,6 +226,7 @@ namespace ComponentProgramming.Views
             txtPassword.Text = details[2];
             txtPhone.Text = details[3];
             txtCurrentDepartment.Text = details[4];
+            txtCurrentRole.Text = details[5];
         }
 
         private void CopyComboBoxValues(ComboBox comboToCopy)

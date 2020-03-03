@@ -33,5 +33,27 @@ namespace Connection.Properties {
                 return ((string)(this["lb6972qConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=sql-server;Initial Catalog=lc8884l;Persist Security Info=True;User ID" +
+            "=lc8884l")]
+        public string lc8884lConnectionString {
+            get {
+                return ((string)(this["lc8884lConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=sql-server;Initial Catalog=lc8884l;User ID=lc8884l;Password=!1SQLServ" +
+            "er")]
+        public string lc8884lConnectionString1 {
+            get {
+                return ((string)(this["lc8884lConnectionString1"]));
+            }
+        }
     }
 }

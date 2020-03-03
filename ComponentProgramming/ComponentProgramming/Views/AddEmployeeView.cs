@@ -10,21 +10,21 @@ namespace ComponentProgramming.Views
     class AddEmployeeView : Panel
     {
 
-        CustomLabel lblFirstName = new CustomLabel();
-        CustomLabel lblSurname = new CustomLabel();
-        CustomLabel lblAddress = new CustomLabel();
-        CustomLabel lblEmail = new CustomLabel();
-        CustomLabel lblPassword = new CustomLabel();
-        CustomLabel lblPhone = new CustomLabel();
-        CustomLabel lblDepartment = new CustomLabel();
-        CustomTextBox2 txtFirstName = new CustomTextBox2();
-        CustomTextBox2 txtSurname = new CustomTextBox2();
-        CustomTextBox2 txtAddress = new CustomTextBox2();
-        CustomTextBox2 txtEmail = new CustomTextBox2();
-        CustomTextBox2 txtPassword = new CustomTextBox2();
-        CustomTextBox3 txtPhone = new CustomTextBox3();
-        CustomButton btnCreate = new CustomButton();
-        ComboBox comboDepartment = new ComboBox();
+        private CustomLabel lblFirstName = new CustomLabel();
+        private CustomLabel lblSurname = new CustomLabel();
+        private CustomLabel lblAddress = new CustomLabel();
+        private CustomLabel lblEmail = new CustomLabel();
+        private CustomLabel lblPassword = new CustomLabel();
+        private CustomLabel lblPhone = new CustomLabel();
+        private CustomLabel lblDepartment = new CustomLabel();
+        private CustomTextBox2 txtFirstName = new CustomTextBox2();
+        private CustomTextBox2 txtSurname = new CustomTextBox2();
+        private CustomTextBox2 txtAddress = new CustomTextBox2();
+        private CustomTextBox2 txtEmail = new CustomTextBox2();
+        private CustomTextBox2 txtPassword = new CustomTextBox2();
+        private CustomTextBox3 txtPhone = new CustomTextBox3();
+        private CustomButton btnCreate = new CustomButton();
+        private ComboBox comboDepartment = new ComboBox();
 
         public CustomLabel LblFirstName { get => lblFirstName; set => lblFirstName = value; }
         public CustomLabel LblSurname { get => lblSurname; set => lblSurname = value; }
@@ -107,8 +107,7 @@ namespace ComponentProgramming.Views
         private void SetPositions()
         {
 
-            lblFirstName.Location = new Point((Width - lblFirstName.Width) / 2,
-                Height / 5 - lblFirstName.Height / 2 - 60);
+            lblFirstName.Location = new Point((Width - lblFirstName.Width) / 2, 100);
             lblFirstName.Anchor = AnchorStyles.None;
 
             txtFirstName.Location = new Point((Width - txtFirstName.Width) / 2,

@@ -12,10 +12,10 @@ namespace ComponentProgramming.Views
     class DeleteEmployeeView : Panel
     {
 
-        CustomLabel lblName = new CustomLabel();
-        ComboBox comboName = new ComboBox();
-        RichTextBox richtxtDetails = new RichTextBox();
-        CustomButton btnDelete = new CustomButton();
+        private CustomLabel lblName = new CustomLabel();
+        private ComboBox comboName = new ComboBox();
+        private RichTextBox richtxtDetails = new RichTextBox();
+        private CustomButton btnDelete = new CustomButton();
         public CustomLabel LblName { get => lblName; set => lblName = value; }
         public ComboBox ComboName { get => comboName; set => comboName = value; }
         public RichTextBox RichtxtDetails { get => richtxtDetails; set => richtxtDetails = value; }
@@ -54,8 +54,7 @@ namespace ComponentProgramming.Views
 
         private void SetPositions()
         {
-            lblName.Location = new Point((Width - lblName.Width) / 2,
-                Height / 5 - lblName.Height / 2 - 60);
+            lblName.Location = new Point((Width - lblName.Width) / 2, 100);
             lblName.Anchor = AnchorStyles.None;
 
             comboName.Location = new Point((Width - comboName.Width) / 2,

@@ -13,21 +13,21 @@ namespace ComponentProgramming.Views
     class EditEmployeeView : Panel
     {
 
-        CustomLabel lblName = new CustomLabel();
-        ComboBox comboName = new ComboBox();
-        CustomLabel lblAddress = new CustomLabel();
-        CustomLabel lblEmail = new CustomLabel();
-        CustomLabel lblPassword = new CustomLabel();
-        CustomLabel lblPhone = new CustomLabel();
-        CustomLabel lblDepartment = new CustomLabel();
-        CustomTextBox2 txtAddress = new CustomTextBox2();
-        CustomTextBox2 txtEmail = new CustomTextBox2();
-        CustomTextBox2 txtPassword = new CustomTextBox2();
-        CustomTextBox3 txtPhone = new CustomTextBox3();
-        CustomTextBox2 txtCurrentDepartment = new CustomTextBox2();
-        CustomLabel lblSelect = new CustomLabel();
-        ComboBox comboDepartment = new ComboBox();
-        CustomButton btnEdit = new CustomButton();
+        private CustomLabel lblName = new CustomLabel();
+        private ComboBox comboName = new ComboBox();
+        private CustomLabel lblAddress = new CustomLabel();
+        private CustomLabel lblEmail = new CustomLabel();
+        private CustomLabel lblPassword = new CustomLabel();
+        private CustomLabel lblPhone = new CustomLabel();
+        private CustomLabel lblDepartment = new CustomLabel();
+        private CustomTextBox2 txtAddress = new CustomTextBox2();
+        private CustomTextBox2 txtEmail = new CustomTextBox2();
+        private CustomTextBox2 txtPassword = new CustomTextBox2();
+        private CustomTextBox3 txtPhone = new CustomTextBox3();
+        private CustomTextBox2 txtCurrentDepartment = new CustomTextBox2();
+        private CustomLabel lblSelect = new CustomLabel();
+        private ComboBox comboDepartment = new ComboBox();
+        private CustomButton btnEdit = new CustomButton();
 
         public CustomLabel LblName { get => lblName; set => lblName = value; }
         public ComboBox ComboName { get => comboName; set => comboName = value; }
@@ -114,8 +114,7 @@ namespace ComponentProgramming.Views
 
         private void SetPositions()
         {
-            lblName.Location = new Point((Width - lblName.Width) / 2,
-                Height / 5 - lblName.Height / 2 - 60);
+            lblName.Location = new Point((Width - lblName.Width) / 2, 100);
             lblName.Anchor = AnchorStyles.None;
 
             comboName.Location = new Point((Width - comboName.Width) / 2,

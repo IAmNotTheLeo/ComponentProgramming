@@ -37,6 +37,7 @@ namespace ComponentProgramming.Controllers
                     AddEmployeeView addEmployeeView = new AddEmployeeView();
                     AddEmployeeController addEmployeeController = new AddEmployeeController(addEmployeeDashboard, addEmployeeView, this.curForm);
                     addEmployeeController.DisplayView();
+                    DisplayNavigation();
                     break;
 
                 case "Edit Employee":
@@ -45,6 +46,7 @@ namespace ComponentProgramming.Controllers
                     EditEmployeeView editEmployeeView = new EditEmployeeView();
                     EditEmployeeController editEmployeeController = new EditEmployeeController(editEmployeeDashboard, editEmployeeView, this.curForm);
                     editEmployeeController.DisplayView();
+                    DisplayNavigation();
                     break;
 
                 case "Delete Employee":
@@ -53,6 +55,7 @@ namespace ComponentProgramming.Controllers
                     DeleteEmployeeView deleteEmployeeView = new DeleteEmployeeView();
                     DeleteEmployeeController deleteEmployeeController = new DeleteEmployeeController(deleteEmployeeDashboard, deleteEmployeeView, this.curForm);
                     deleteEmployeeController.DisplayView();
+                    DisplayNavigation();
                     break;
             }
         }
@@ -60,6 +63,13 @@ namespace ComponentProgramming.Controllers
         public void DisplayView()
         {
             this.view.SetUpControlls(view.BtnViewAddEmployee, view.BtnViewEditEmployee, view.BtnViewDeleteEmployee, this.curForm);
+        }
+
+        public void DisplayNavigation()
+        {
+            NavigationView navigationView = new NavigationView();
+            NavigationController navigationController = new NavigationController(navigationView, this.curForm);
+            navigationController.DisplayView();
         }
     }
 }

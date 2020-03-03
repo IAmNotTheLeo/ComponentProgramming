@@ -11,9 +11,9 @@ namespace ComponentProgramming.Views
 {
     class AdminDashboardView : Panel
     {
-        CustomButton btnViewAddEmployee = new CustomButton();
-        CustomButton btnViewEditEmployee = new CustomButton();
-        CustomButton btnViewDeleteEmployee = new CustomButton();
+        private CustomButton btnViewAddEmployee = new CustomButton();
+        private CustomButton btnViewEditEmployee = new CustomButton();
+        private CustomButton btnViewDeleteEmployee = new CustomButton();
 
         public CustomButton BtnViewAddEmployee { get => btnViewAddEmployee; set => btnViewAddEmployee = value; }
         public CustomButton BtnViewEditEmployee { get => btnViewEditEmployee; set => btnViewEditEmployee = value; }

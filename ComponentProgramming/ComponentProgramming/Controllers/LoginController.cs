@@ -33,6 +33,7 @@ namespace ComponentProgramming.Controllers
                 AdminDashboardView adminDashboardView = new AdminDashboardView();
                 AdminDashboardController adminDashboardController = new AdminDashboardController(adminDashboard, adminDashboardView, this.curForm);
                 adminDashboardController.DisplayView();
+                adminDashboardController.DisplayNavigation();
             }
         }
 

@@ -43,6 +43,7 @@ namespace ComponentProgramming
         {
             view.Dispose();
         }
+
         protected override void OnPaint(PaintEventArgs e)
         {
             LinearGradientBrush lgb = new LinearGradientBrush(ClientRectangle, Color.FromArgb(233, 233, 241), Color.FromArgb(122, 175, 228), 50);
